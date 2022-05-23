@@ -40,6 +40,10 @@
 # Jupyter Book will also embed your code blocks and output in your book.
 # For example, here's some sample Matplotlib code:
 
+# ```{admonition} This is a title
+# An example of an admonition with a title.
+# ```
+
 # In[1]:
 
 
