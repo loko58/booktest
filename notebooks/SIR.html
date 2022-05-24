@@ -1,0 +1,707 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3.1. SIR Model &#8212; A RULE-BASED EPIDEMIOLOGICAL FRAMEWORK FOR MODELLING &amp; SIMULATION</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"TeX": {"Macros": {"N": "\\mathbb{N}", "di": "\\mathop{}\\!\\mathrm{d}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Bibliography" href="../bibliography.html" />
+    <link rel="prev" title="3. Essential Models of an Epidemiological Modelling Framework" href="../essential-models.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/RBSE.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">A RULE-BASED EPIDEMIOLOGICAL FRAMEWORK FOR MODELLING & SIMULATION</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../abstract.html">
+   Abstract
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../modelling-framework.html">
+   2. Modelling Framework
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../essential-models.html">
+   3. Essential Models of an Epidemiological Modelling Framework
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.1. SIR Model
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/SIR.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/loko58/booktest.git"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/loko58/booktest.git/issues/new?title=Issue%20on%20page%20%2Fnotebooks/SIR.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/loko58/booktest.git/master?urlpath=lab/tree/notebooks/SIR.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numerical-simulations">
+   3.1.1. Numerical Simulations
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>SIR Model</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numerical-simulations">
+   3.1.1. Numerical Simulations
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="sir-model">
+<span id="sec-standardmodels-subsec-sir"></span><h1><span class="section-number">3.1. </span>SIR Model<a class="headerlink" href="#sir-model" title="Permalink to this headline">¶</a></h1>
+<p>The SIRD model is the simplest epidemiological model possible. However, for COVID-19 dynamics, it is far too simple. Nevertheless we can introduce general principles that govern all epidemiological models describing the spread of COVID-19.</p>
+<p>In contrast to the notation in the previous sections, we use types with  specific interpretations as in <a class="reference internal" href="#tab-sec-standard-subsec-sir-types"><span class="std std-numref">Table 3.1</span></a> in the following.
+We denote the types in the rules and the number of individuals of respective types in the propensities with the same italic symbols. For the formulations of ODEs and their analysis we consider the associated concentrations and denote them by roman symbols. By this we emphasize the qualitative properties  of the ODE solution are independent of the actual total number <span class="math notranslate nohighlight">\(N\)</span> of individuals.</p>
+<table class="table" id="tab-sec-standard-subsec-sir-types">
+<caption><span class="caption-number">Table 3.1 </span><span class="caption-text">The types of the standard SIR model.</span><a class="headerlink" href="#tab-sec-standard-subsec-sir-types" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Interpretation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(S\)</span></p></td>
+<td><p>Susceptible</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(I\)</span></p></td>
+<td><p>Infectious</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(R\)</span></p></td>
+<td><p>Recovered</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(D\)</span></p></td>
+<td><p>Deceased</p></td>
+</tr>
+</tbody>
+</table>
+<p>For reaction constants <span class="math notranslate nohighlight">\(\iota,\rho &gt; 0\)</span>, the following rules describe type changes:</p>
+<div class="math notranslate nohighlight" id="equation-eq-sec-standard-subsec-sir">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-eq-sec-standard-subsec-sir" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{equation}
+\begin{alignedat}{5}
+	S + I &amp;\xrightarrow{\iota} &amp;&amp; 2 I  &amp;\quad\text{[Infections]}\\
+	    I &amp;\xrightarrow{\rho}  &amp;&amp;   R  &amp;\quad\text{[Recovery]}\\
+\end{alignedat}
+\end{equation}\end{split}\]</div>
+<p>Here, the infectious rate <span class="math notranslate nohighlight">\(\iota\)</span> controls the rate of spread, i.e. <span class="math notranslate nohighlight">\(\iota\)</span> represents the probability of
+transmitting the disease between a susceptible and an infectious individual. The recovery rate <span class="math notranslate nohighlight">\(\rho = 1/\tau\)</span> is determined by the average duration <span class="math notranslate nohighlight">\(\tau\)</span> of the infection. Motivated by the COVID-19 pandemic, where numbers of deceased individuals are highly relevant, we introduce a death rate <span class="math notranslate nohighlight">\(\delta\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-eq-sec-standard-subsec-sird">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-eq-sec-standard-subsec-sird" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{equation}
+\begin{alignedat}{5}
+	I &amp;\xrightarrow{\delta} &amp;&amp; D &amp;\quad\text{[Death]}\\
+\end{alignedat}
+\end{equation}\end{split}\]</div>
+<p>A model consisting of <a class="reference internal" href="#equation-eq-sec-standard-subsec-sir">(3.1)</a> and <a class="reference internal" href="#equation-eq-sec-standard-subsec-sird">(3.2)</a> is also referred to as an SIRD model. We denote the concentrations by <span class="math notranslate nohighlight">\(\cS,\cI,\cR\)</span> and the associated number of individuals by <span class="math notranslate nohighlight">\(\nS,\nI, \nR\)</span>, i.e. <span class="math notranslate nohighlight">\(\nS=\cS N\)</span>, <span class="math notranslate nohighlight">\(\nI =\cI N\)</span> and  <span class="math notranslate nohighlight">\(\nR = \cR N\)</span>.</p>
+<p>For the sake of completeness, we summarise the SIRD model for concentrations <span class="math notranslate nohighlight">\(\cS,\cI,\cR\)</span> in <a class="reference internal" href="#equation-eq-sec-standard-subsec-sir-odeconcentrations">(3.4)</a> with propensities <a class="reference internal" href="#equation-eq-sec-standard-subsec-sird-ssapropensities">(3.3)</a> for the associated number of individuals <span class="math notranslate nohighlight">\(\nS,\nI, \nR\)</span>:</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-header docutils">
+<p class="card-text">Propensities with numbers:</p>
+</div>
+<div class="card-body docutils">
+<div class="math notranslate nohighlight" id="equation-eq-sec-standard-subsec-sird-ssapropensities">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-eq-sec-standard-subsec-sird-ssapropensities" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{equation}
+\begin{aligned}
+    \kappa_1(S, I, R, D) &amp;= \frac{\iota}{N} S I,\\
+    \kappa_2(S, I, R, D) &amp;= \rho I,\\
+    \kappa_3(S, I, R, D) &amp;= \delta I.
+\end{aligned}
+\end{equation}\end{split}\]</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-header docutils">
+<p class="card-text">ODEs for concentrations:</p>
+</div>
+<div class="card-body docutils">
+<div class="math notranslate nohighlight" id="equation-eq-sec-standard-subsec-sir-odeconcentrations">
+<span class="eqno">(3.4)<a class="headerlink" href="#equation-eq-sec-standard-subsec-sir-odeconcentrations" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{equation}
+\begin{aligned}
+   	\frac{d S}{d t} &amp;= - \iota S I,\\
+   	\frac{d I}{d t} &amp;= \iota S I -\rho I - \delta I,\\
+   	\frac{d R}{d t} &amp;= \rho I,\\
+   	\frac{d D}{d t} &amp;= \delta I.
+\end{aligned}
+\end{equation}\end{split}\]</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Another possible addition supported by data on COVID-19 is the loss of immunity:</p>
+<div class="math notranslate nohighlight" id="equation-eq-sec-standard-subsec-sird-loss">
+<span class="eqno">(3.5)<a class="headerlink" href="#equation-eq-sec-standard-subsec-sird-loss" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+	\begin{split}
+	R &amp;\xrightarrow{ \lambda} S \;\; \text{[Loss of Immunity]}\\ 
+	\end{split}
+\end{align}\end{split}\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\lambda &gt; 0\)</span> is the rate with which immunity is lost. Loss of immunity is relevant for forecasting herd immunity or the long-time perspectives of vaccination strategies.</p>
+<div class="section" id="numerical-simulations">
+<span id="sec-standard-subsubsec-sird-numericalsimulations"></span><h2><span class="section-number">3.1.1. </span>Numerical Simulations<a class="headerlink" href="#numerical-simulations" title="Permalink to this headline">¶</a></h2>
+<p>As proof of concept we simulate toy models and try to reproduce features observable in reality. We provide possible interpretations of the results without proof.</p>
+<p>The parameters are inspired by COVID-19 but not derived explicitly. Therefore we avoid labeling the time unit, but you may think of days. Also the parameters for the rates are exaggerated and adjusted, such that for a total population of <span class="math notranslate nohighlight">\(N = 1000\)</span> the different types are clearly recognisable in these small figures. We keep throughout all toy models the basic parameter set <span class="math notranslate nohighlight">\(\iota^0 = 0.2\)</span>, <span class="math notranslate nohighlight">\(\rho^0 = 0.02\)</span> and <span class="math notranslate nohighlight">\(\delta^0 = 0.01\)</span> only modifying them according to the extended models. For a coherent compilation see <code class="xref std std-numref docutils literal notranslate"><span class="pre">table:sec:simulation_parameters</span></code> in the Appendix.
+The initial number of infectious individuals is always <span class="math notranslate nohighlight">\(\nI_0^0 = 3\)</span>. In <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:plotSIRD(SSA-ODE)</span></code>, numerical results for the SIRD model <a class="reference internal" href="#equation-eq-sec-standard-subsec-sir-odeconcentrations">(3.4)</a> with basic parameters for a SSA and an ODE solver are shown. After an exponential growth for the number of infectious, their number decrease due to the reduced number of susceptible individuals absorbed by the recovered and deceased. For this single realisation of SSA in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:plotSIRD(SSA)</span></code> 3 susceptible individuals survive the epidemic. The ODE simulation in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig:plotSIRD(ODE)</span></code> reveals a strictly positive share of susceptibles. The SSA and ODE simulations are relatively similar for this parameter setting and chosen random seed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.patheffects</span> <span class="k">as</span> <span class="nn">path_effects</span>
+<span class="kn">from</span> <span class="nn">matplotlib.patches</span> <span class="kn">import</span> <span class="n">Patch</span>
+
+<span class="c1">#from myst_nb import glue</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plotFilled</span><span class="p">(</span>
+    <span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">Ss</span><span class="p">,</span> <span class="n">Is</span><span class="p">,</span> <span class="n">Rs</span><span class="p">,</span> <span class="n">Ds</span><span class="p">,</span>
+    <span class="n">ptitle</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">plegend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">pplot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span>
+    <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;tab:orange&#39;</span><span class="p">,</span> <span class="s1">&#39;tab:green&#39;</span><span class="p">,</span> <span class="s1">&#39;tab:blue&#39;</span><span class="p">,</span> <span class="s1">&#39;black&#39;</span><span class="p">],</span>
+    <span class="n">step</span><span class="o">=</span><span class="s1">&#39;post&#39;</span>
+<span class="p">):</span>
+
+    <span class="n">typenames</span>  <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;I&quot;</span><span class="p">,</span> <span class="s2">&quot;S&quot;</span><span class="p">,</span> <span class="s2">&quot;R&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">]</span>
+        
+    <span class="n">nX</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">Is</span><span class="p">,</span> <span class="n">Ss</span><span class="p">,</span> <span class="n">Rs</span><span class="p">,</span> <span class="n">Ds</span><span class="p">]</span>
+    <span class="n">nXS</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">nX</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">nXS</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">nXS</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">)),</span><span class="n">nXS</span><span class="p">))</span> <span class="c1"># adding zero basis</span>
+    
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
+    
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">ty</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="n">y</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">nXS</span><span class="p">[:,</span><span class="n">y</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">nXS</span><span class="p">[:,</span><span class="n">y</span><span class="p">],</span>
+                        <span class="n">step</span><span class="o">=</span><span class="n">step</span><span class="p">,</span>
+                        <span class="n">color</span> <span class="o">=</span> <span class="n">colors</span><span class="p">[</span><span class="n">ty</span><span class="p">],</span>
+                        <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">,</span>
+                        <span class="n">label</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;$</span><span class="si">{</span><span class="n">typenames</span><span class="p">[</span><span class="n">ty</span><span class="p">]</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">)</span>
+            
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">time</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">nXS</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">nXS</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]),</span> <span class="s2">&quot;</span><span class="si">{:3.0f}</span><span class="s2"> % &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">nX</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="n">N</span><span class="p">),</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span>
+                <span class="n">path_effects</span><span class="o">=</span><span class="p">[</span><span class="n">path_effects</span><span class="o">.</span><span class="n">Stroke</span><span class="p">(</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">foreground</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">),</span> <span class="n">path_effects</span><span class="o">.</span><span class="n">Normal</span><span class="p">()])</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="n">T</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="n">N</span><span class="p">))</span>        
+    
+    <span class="k">if</span> <span class="n">plegend</span><span class="p">:</span>
+        <span class="n">handles</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_legend_handles_labels</span><span class="p">()</span>
+        <span class="n">handles</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">handles</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">labels</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">box</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_position</span><span class="p">()</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_position</span><span class="p">([</span><span class="n">box</span><span class="o">.</span><span class="n">x0</span><span class="p">,</span> <span class="n">box</span><span class="o">.</span><span class="n">y0</span><span class="p">,</span> <span class="n">box</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span> <span class="mf">0.8</span><span class="p">,</span> <span class="n">box</span><span class="o">.</span><span class="n">height</span><span class="p">])</span>
+        <span class="n">legend</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">shadow</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;x-large&#39;</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">ptitle</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">ptitle</span><span class="p">)</span>
+    
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Individuals&#39;</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">pplot</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span> 
+    <span class="k">return</span> <span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ODE</span><span class="p">(</span>
+    <span class="n">T</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">Sinit</span><span class="p">,</span> <span class="n">Iinit</span><span class="p">,</span> <span class="n">Rinit</span><span class="p">,</span> <span class="n">Dinit</span><span class="p">,</span>
+    <span class="n">deriv</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span>
+<span class="p">):</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="mf">0.</span>
+    
+    <span class="c1"># converting to concentrations (for consistency)</span>
+    <span class="n">S0</span> <span class="o">=</span> <span class="n">Sinit</span> <span class="o">/</span> <span class="n">N</span>
+    <span class="n">I0</span> <span class="o">=</span> <span class="n">Iinit</span> <span class="o">/</span> <span class="n">N</span>
+    <span class="n">R0</span> <span class="o">=</span> <span class="n">Rinit</span> <span class="o">/</span> <span class="n">N</span>
+    <span class="n">D0</span> <span class="o">=</span> <span class="n">Dinit</span> <span class="o">/</span> <span class="n">N</span>
+    
+    <span class="n">Y0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">S0</span><span class="p">,</span> <span class="n">I0</span><span class="p">,</span> <span class="n">R0</span><span class="p">,</span> <span class="n">D0</span><span class="p">))</span>
+    
+    <span class="n">sol</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">,</span> <span class="n">Y</span><span class="p">:</span> <span class="n">deriv</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">),</span> <span class="n">y0</span><span class="o">=</span><span class="n">Y0</span><span class="p">,</span> <span class="n">t_span</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">T</span><span class="p">),</span> <span class="n">t_eval</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">T</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="o">*</span><span class="p">(</span><span class="n">N</span> <span class="o">*</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">deriv</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">iota</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">delta</span><span class="p">):</span>
+    <span class="n">S</span><span class="p">,</span> <span class="n">I</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">D</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">Y</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">Y</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">Y</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+    
+    <span class="n">dYdt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">dYdt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">S</span><span class="o">*</span><span class="n">I</span><span class="o">*</span><span class="n">iota</span>                       <span class="c1"># dS/dt</span>
+    <span class="n">dYdt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span>  <span class="n">S</span><span class="o">*</span><span class="n">I</span><span class="o">*</span><span class="n">iota</span> <span class="o">-</span> <span class="p">(</span><span class="n">rho</span> <span class="o">+</span> <span class="n">delta</span><span class="p">)</span> <span class="o">*</span> <span class="n">I</span>   <span class="c1"># dI/dt</span>
+    <span class="n">dYdt</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span>              <span class="n">rho</span>          <span class="o">*</span> <span class="n">I</span>   <span class="c1"># dR/dt</span>
+    <span class="n">dYdt</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span>                    <span class="n">delta</span>  <span class="o">*</span> <span class="n">I</span>   <span class="c1"># dD/dt</span>
+    <span class="k">return</span> <span class="n">dYdt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Gillespie</span><span class="p">(</span>
+    <span class="n">T</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">Sinit</span><span class="p">,</span> <span class="n">Iinit</span><span class="p">,</span> <span class="n">Rinit</span><span class="p">,</span> <span class="n">Dinit</span><span class="p">,</span>
+    <span class="n">seed</span><span class="p">,</span>
+    <span class="n">updateStates</span><span class="p">,</span> <span class="n">updatePropensities</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span>
+<span class="p">):</span>
+    
+    <span class="c1"># Inital values</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="mf">0.</span>
+    <span class="n">S</span> <span class="o">=</span> <span class="n">Sinit</span>
+    <span class="n">I</span> <span class="o">=</span> <span class="n">Iinit</span>
+    <span class="n">R</span> <span class="o">=</span> <span class="n">Rinit</span>
+    <span class="n">D</span> <span class="o">=</span> <span class="n">Dinit</span>
+    
+    <span class="c1"># Vectors for time series</span>
+    <span class="n">time</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span><span class="p">]</span>
+    <span class="n">Ss</span>   <span class="o">=</span> <span class="p">[</span><span class="n">S</span><span class="p">]</span>
+    <span class="n">Is</span>   <span class="o">=</span> <span class="p">[</span><span class="n">I</span><span class="p">]</span>
+    <span class="n">Rs</span>   <span class="o">=</span> <span class="p">[</span><span class="n">R</span><span class="p">]</span>
+    <span class="n">Ds</span>   <span class="o">=</span> <span class="p">[</span><span class="n">D</span><span class="p">]</span>
+
+    
+    <span class="c1"># Random Generator</span>
+    <span class="n">rg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+
+    <span class="c1"># Main loop</span>
+    <span class="k">while</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="n">T</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">I</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span> <span class="c1"># no infectives any more means epidemic dies out</span>
+            <span class="k">break</span>
+            
+        <span class="c1"># First uniformily distributed ranmdom number for reaction time</span>
+        <span class="n">r1</span>  <span class="o">=</span> <span class="n">rg</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">)</span>
+        
+        <span class="c1"># Propensities calculation</span>
+        <span class="n">kappa</span> <span class="o">=</span> <span class="n">updatePropensities</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">I</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">Phi</span>   <span class="o">=</span> <span class="n">kappa</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+        
+        <span class="c1"># waiting time tau</span>
+        <span class="n">tau</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">r1</span><span class="p">)</span> <span class="o">/</span> <span class="n">Phi</span>
+        <span class="n">t</span>   <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">tau</span>
+  
+        <span class="c1"># Second uniformily distributed random number for executed reaction</span>
+        <span class="n">r2</span> <span class="o">=</span> <span class="n">rg</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">)</span>
+        
+        <span class="c1"># Rule determined to be executed</span>
+        <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">kappa</span><span class="p">)</span> <span class="o">/</span> <span class="n">Phi</span>
+        <span class="n">rExc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">searchsorted</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="n">side</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+        
+        <span class="c1"># Update states</span>
+        <span class="n">S</span><span class="p">,</span> <span class="n">I</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">D</span> <span class="o">=</span> <span class="n">updateStates</span><span class="p">(</span><span class="n">rExc</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">I</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span>
+        
+        <span class="c1"># Append new values</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+        <span class="n">Ss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+        <span class="n">Is</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+        <span class="n">Rs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+        <span class="n">Ds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
+        
+    <span class="k">return</span> <span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">Ss</span><span class="p">,</span> <span class="n">Is</span><span class="p">,</span> <span class="n">Rs</span><span class="p">,</span> <span class="n">Ds</span><span class="p">)</span>
+        
+<span class="k">def</span> <span class="nf">updateStates</span><span class="p">(</span><span class="n">rExc</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">I</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">D</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">rExc</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>         <span class="c1"># Infection</span>
+        <span class="n">S</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="n">I</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">S</span><span class="p">,</span> <span class="n">I</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">D</span>
+    <span class="k">if</span> <span class="n">rExc</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>         <span class="c1"># Recovery</span>
+        <span class="n">I</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="n">R</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">S</span><span class="p">,</span> <span class="n">I</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">D</span>
+    <span class="k">if</span> <span class="n">rExc</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>         <span class="c1"># Death</span>
+        <span class="n">I</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="n">D</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">S</span><span class="p">,</span> <span class="n">I</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">D</span>
+    
+<span class="k">def</span> <span class="nf">updatePropensities</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">I</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">iota</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">delta</span><span class="p">):</span>
+    <span class="n">kappa</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">kappa</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">S</span> <span class="o">*</span> <span class="n">I</span> <span class="o">*</span> <span class="n">iota</span> <span class="o">/</span> <span class="n">N</span> <span class="c1"># Infection</span>
+    <span class="n">kappa</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span>     <span class="n">I</span> <span class="o">*</span> <span class="n">rho</span>      <span class="c1"># Recovery</span>
+    <span class="n">kappa</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span>     <span class="n">I</span> <span class="o">*</span> <span class="n">delta</span>    <span class="c1"># Death</span>
+    <span class="k">return</span> <span class="n">kappa</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Parameters:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span>     <span class="o">=</span> <span class="mi">300</span>
+<span class="n">N</span>     <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="n">iota</span>  <span class="o">=</span> <span class="mf">0.2</span>
+<span class="n">rho</span>   <span class="o">=</span> <span class="mf">0.02</span>
+<span class="n">delta</span> <span class="o">=</span> <span class="mf">0.01</span>
+
+<span class="n">Iinit</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">Sinit</span> <span class="o">=</span> <span class="n">N</span> <span class="o">-</span> <span class="n">Iinit</span>
+<span class="n">Rinit</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">Dinit</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">seed</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t_SSA</span><span class="p">,</span> <span class="n">S_SSA</span><span class="p">,</span> <span class="n">I_SSA</span><span class="p">,</span> <span class="n">R_SSA</span><span class="p">,</span> <span class="n">D_SSA</span> <span class="o">=</span> <span class="n">Gillespie</span><span class="p">(</span>
+    <span class="n">T</span><span class="o">=</span><span class="n">T</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="n">N</span><span class="p">,</span> <span class="n">Sinit</span><span class="o">=</span><span class="n">Sinit</span><span class="p">,</span> <span class="n">Iinit</span><span class="o">=</span><span class="n">Iinit</span><span class="p">,</span> <span class="n">Rinit</span><span class="o">=</span><span class="n">Rinit</span><span class="p">,</span> <span class="n">Dinit</span><span class="o">=</span><span class="n">Dinit</span><span class="p">,</span>
+    <span class="n">seed</span> <span class="o">=</span> <span class="n">seed</span><span class="p">,</span>
+    <span class="n">updateStates</span><span class="o">=</span><span class="n">updateStates</span><span class="p">,</span> <span class="n">updatePropensities</span><span class="o">=</span><span class="n">updatePropensities</span><span class="p">,</span>                      
+    <span class="n">iota</span><span class="o">=</span><span class="n">iota</span><span class="p">,</span> <span class="n">rho</span><span class="o">=</span><span class="n">rho</span><span class="p">,</span> <span class="n">delta</span><span class="o">=</span><span class="n">delta</span>
+<span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plotFilled</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">t_SSA</span><span class="p">,</span> <span class="n">S_SSA</span><span class="p">,</span> <span class="n">I_SSA</span><span class="p">,</span> <span class="n">R_SSA</span><span class="p">,</span> <span class="n">D_SSA</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/000b418b501392956e1e08122cd266e12c99448a26d89a1a60db36a53983f239.png" src="../_images/000b418b501392956e1e08122cd266e12c99448a26d89a1a60db36a53983f239.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t_ODE</span><span class="p">,</span> <span class="n">S_ODE</span><span class="p">,</span> <span class="n">I_ODE</span><span class="p">,</span> <span class="n">R_ODE</span><span class="p">,</span> <span class="n">D_ODE</span> <span class="o">=</span>  <span class="n">ODE</span><span class="p">(</span>
+    <span class="n">T</span><span class="o">=</span><span class="n">T</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="n">N</span><span class="p">,</span> <span class="n">Sinit</span><span class="o">=</span><span class="n">Sinit</span><span class="p">,</span> <span class="n">Iinit</span><span class="o">=</span><span class="n">Iinit</span><span class="p">,</span> <span class="n">Rinit</span><span class="o">=</span><span class="n">Rinit</span><span class="p">,</span> <span class="n">Dinit</span><span class="o">=</span><span class="n">Dinit</span><span class="p">,</span>
+    <span class="n">deriv</span><span class="o">=</span><span class="n">deriv</span><span class="p">,</span>
+    <span class="n">iota</span><span class="o">=</span><span class="n">iota</span><span class="p">,</span> <span class="n">rho</span><span class="o">=</span><span class="n">rho</span><span class="p">,</span> <span class="n">delta</span><span class="o">=</span><span class="n">delta</span>
+<span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plotFilled</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">t_ODE</span><span class="p">,</span> <span class="n">S_ODE</span><span class="p">,</span> <span class="n">I_ODE</span><span class="p">,</span> <span class="n">R_ODE</span><span class="p">,</span> <span class="n">D_ODE</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;gray&#39;</span><span class="p">],</span> <span class="n">step</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ed11bfbb29255b6159707ad424e0b4b7177aec953de802482c9b977d5c37c685.png" src="../_images/ed11bfbb29255b6159707ad424e0b4b7177aec953de802482c9b977d5c37c685.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "loko58/booktest.git",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../essential-models.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">3. </span>Essential Models of an Epidemiological Modelling Framework</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../bibliography.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Bibliography</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By COVID19 group<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

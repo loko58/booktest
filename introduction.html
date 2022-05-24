@@ -1,0 +1,490 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. Introduction &#8212; A RULE-BASED EPIDEMIOLOGICAL FRAMEWORK FOR MODELLING &amp; SIMULATION</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"TeX": {"Macros": {"N": "\\mathbb{N}", "di": "\\mathop{}\\!\\mathrm{d}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2. Modelling Framework" href="modelling-framework.html" />
+    <link rel="prev" title="Abstract" href="abstract.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/RBSE.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">A RULE-BASED EPIDEMIOLOGICAL FRAMEWORK FOR MODELLING & SIMULATION</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="abstract.html">
+   Abstract
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modelling-framework.html">
+   2. Modelling Framework
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="essential-models.html">
+   3. Essential Models of an Epidemiological Modelling Framework
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/SIR.html">
+     3.1. SIR Model
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/introduction.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/loko58/booktest.git"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/loko58/booktest.git/issues/new?title=Issue%20on%20page%20%2Fintroduction.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#challenges-triggered-by-the-pandemic">
+   1.1. Challenges Triggered By The Pandemic
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classification-as-structural-model-basis-relation-to-statistics">
+   1.2. Classification as Structural Model Basis, Relation to Statistics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rules">
+   1.3. Rules
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#global-information">
+     1.3.1. Global Information
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sub-classifications-internal-and-external-individual-states">
+   1.4. Sub-Classifications, Internal and External Individual States
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introduction</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#challenges-triggered-by-the-pandemic">
+   1.1. Challenges Triggered By The Pandemic
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classification-as-structural-model-basis-relation-to-statistics">
+   1.2. Classification as Structural Model Basis, Relation to Statistics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rules">
+   1.3. Rules
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#global-information">
+     1.3.1. Global Information
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sub-classifications-internal-and-external-individual-states">
+   1.4. Sub-Classifications, Internal and External Individual States
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="introduction">
+<span id="sec-intro"></span><h1><span class="section-number">1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>This paper is a comprehensive study, but still only an initial attempt to apply novel mathematical modelling methods  to the COVID-19 pandemic. We propose a rule-based epidemiological framework and hope to use this approach to solve  the still-existing prognosis problem (see <code class="xref std std-numref docutils literal notranslate"><span class="pre">sec:discussion:subsec:prognosis</span></code>), which is a general problem for most so-called complex systems <span id="id1">[<a class="reference internal" href="markdown.html#id91" title="James Ladyman and Karoline Wiesner. What Is a Complex System? Yale University Press, 2020.">LW20</a>]</span>. To summarise what the reader can expect, here is a list of novelties (some of which we aim to include in the future) of our rule-based framework:</p>
+<dl class="simple myst">
+<dt>Formal Language</dt><dd><p>We use a formal mathematical language here which we call <strong>rule-based</strong> as a foundation of our mathematical models. Rule-based models rely on an extension of reaction kinetics which was first formulated to describe chemical reactions. It has the advantage that the rules can be interpreted both stochastically and deterministically. Moreover the rule-based systems have a mathematical structure which makes them very well suited for both science communication and rigorous mathematical analysis at the same time. We can both derive  stochastic processes and differential equations to describe the temporal dynamics of the pandemic and look for differences. There are several examples in <a class="reference internal" href="essential-models.html#sec-standardmodels"><span class="std std-numref">Section 3</span></a> where certain qualitative properties of the models with stochastic or deterministic interpretation stay invariant under update changes. In these cases the deterministic interpretation should be favoured, as the qualitative for differential equations is very well developed. However, we also found many cases where there is a difference between the stochastic and the deterministic interpretations of the rules differ. Therefore, to avoid ambiguity, we use the stochastic case as the generic simulation approach.</p>
+</dd>
+<dt>Mathematical Analysis &amp; Simulation (Scientific Computing)</dt><dd><p>We use different ways of understanding our rule-based mathematical models, and believe only in this combination we do really understand a mathematical model. A mathematical analysis, most often based on the deterministic interpretation as a differential equation, has the advantage to understand a relatively simple model more or less completely. Much in the same way a climate model can only be understood by a whole range of simulations, more complex models of a pandemic can only be understood by means of exhaustive simulation. The models in this publication are still quite modest, and we will go new ways of scientific publication by making the simulation scripts available to the public.</p>
+</dd>
+<dt>Model Variation</dt><dd><p>We do not believe that in something as complex as the COVID-19 pandemic there is a single set of equations or code, like in individual based approaches, that can successfully predict the time course of the pandemic in some sense over a longer period, i.e. overcome the prognosis problem. We stick to the notion that a mathematical model should try to be minimal, i.e. minimally complex by some complexity measure <span id="id2">[<a class="reference internal" href="markdown.html#id91" title="James Ladyman and Karoline Wiesner. What Is a Complex System? Yale University Press, 2020.">LW20</a>]</span> as long as it is sufficiently predictive. This is related to the scientific principle called Occam’s razor. As in <span id="id3">[<a class="reference internal" href="markdown.html#id88" title="David J. C. MacKay. Information Theory, Inference and Learning Algorithms. Cambridge University Press, 2003.">Mac03</a>]</span>, Chapter 28, we consider Occam’s razor as a natural outcome of coherent interference based on Bayesian probability.  In reality this reasoning will imply the optimally predictive model will change, i.e. we will have to walk through a model space, see <code class="xref std std-numref docutils literal notranslate"><span class="pre">sec:intro:subsec:framework</span></code>.</p>
+</dd>
+<dt>Data Science</dt><dd><p>The mathematical modelling community has too long neglected the data aspect. The COVID-19 pandemic has produced a massive amount of data, see <code class="xref std std-numref docutils literal notranslate"><span class="pre">sec:discussion:subsec:data</span></code>. The model variation and prognosis problem can only be solved together with a firm link to data science. This is a major step we like to tackle in this project in future, however this is not an easy task. We are aware of recent advances in parametrisation of mathematical models, but still believe this is largely an unsolved problem of immense importance.</p>
+</dd>
+</dl>
+<div class="section" id="challenges-triggered-by-the-pandemic">
+<span id="sec-intro-subsec-challenges"></span><h2><span class="section-number">1.1. </span>Challenges Triggered By The Pandemic<a class="headerlink" href="#challenges-triggered-by-the-pandemic" title="Permalink to this headline">¶</a></h2>
+<p>The COVID-19 pandemic posed a complex set of questions to the mathematical modelling community, with nearly daily new twists and turns. This paper intends to present a systematic framework of possible models that are designed to give answers to different aspects triggered by COVID-19 pandemic observations, i.e. empirical epidemiological data. Therefore, as discussed, we are not focusing on a particular model, as is often the case in applied mathematics papers, but follow a systematic model construction approach instead. In this first publication, we do not parametrise our models with data yet, but take basic empirical facts from the data to make <strong>variable classification</strong> choices. To have a first model choice skeleton, we observe the following fundamental empirical facts about COVID-19:</p>
+<p>Age:
+From the start of observed coronavirus cases, the associated risks have strongly been age correlated <span id="id4">[<a class="reference internal" href="markdown.html#id62" title="Smriti Mallapaty. Is the coronavirus getting deadlier? The data are inconclusive. Nature, 2021.">Mal21a</a>, <a class="reference internal" href="markdown.html#id65" title="Megan O'Driscoll, Gabriel Ribeiro Dos Santos, Lin Wang, Derek A.T. Cummings, Andrew S. Azman, Juliette Paireau, Arnaud Fontanet, Simon Cauchemez, and Henrik Salje. Age-specific mortality and immunity patterns of SARS-CoV-2. Nature, 590(7844):140–145, 2021. URL: http://dx.doi.org/10.1038/s41586-020-2918-0, doi:10.1038/s41586-020-2918-0.">ODriscollRibeiroDSantosW+21</a>, <a class="reference internal" href="markdown.html#id66" title="Sam Palmer, Nik Cunniffe, and Ruairí Donnelly. COVID-19 hospitalization rates rise exponentially with age, inversely proportional to thymic T-cell production. Journal of the Royal Society, Interface, 18(176):20200982, 2021. doi:10.1098/rsif.2020.0982.">PCD21</a>]</span>.</p>
+<dl class="simple myst">
+<dt>Health Systems</dt><dd><p>COVID-19 has put unprecedented pressure on healthcare systems worldwide. Due to the limited capacity of the national health systems or similar institutions, fatalities increased dramatically <span id="id5">[<a class="reference internal" href="markdown.html#id48" title="Charbel El Bcheraoui, Heide Weishaar, Francisco Pozo-Martin, and Johanna Hanefeld. Assessing COVID-19 through the lens of health systems’ preparedness: time for a change. Global Health, 16(112):964–980, 2020. URL: https://doi.org/10.1186/s12992-020-00645-5.">BWPMH20</a>, <a class="reference internal" href="markdown.html#id49" title="Victoria Haldane, Chuan De Foo, Salma M. Abdalla, Anne-Sophie Jung, Melisa Tan, Shishi Wu, Alvin Chua, Monica Verma, Pami Shrestha, Sudhvir Singh, Tristana Perez, See Mieng Tan, Michael Bartos, Shunsuke Mabuchi, Mathias Bonk, Christine McNab, George K. Werner, Raj Panjabi, Anders Nordström, and Helena Legido-Quigley. Health systems resilience in managing the COVID-19 pandemic: lessons from 28 countries. Nat Med, 27:964–980, 2021. URL: https://doi.org/10.1038/s41591-021-01381-y.">HFA+21</a>]</span>.</p>
+</dd>
+<dt>Locations</dt><dd><p>Numerous observations and simulation hint at the risk of infection being location dependent. Staying in closed rooms close to infected individual creates a higher risk of infection when compared to the same arrangement in open space <span id="id6">[<a class="reference internal" href="markdown.html#id71" title="Dominik Wodarz, Natalia L. Komarova, and Luis M. Schang. Role of high-dose exposure in transmission hot zones as a driver of SARS-CoV-2 dynamics. Journal of the Royal Society, Interface, 18(176):20200916, 2021. doi:10.1098/rsif.2020.0916.">WKS21</a>]</span>. We leave the investigation of location structure to future publications.</p>
+</dd>
+<dt>Immunity</dt><dd><p>Immunity is now in the discussion in connection with the effectiveness of different vaccines, but it has a more general importance. For example, how long are individuals immune to new infections? Can immunity be gained in other ways, other than having had an infection or getting vaccinated? <span id="id7">[<a class="reference internal" href="markdown.html#id55" title="Antoine Danchin and Gabriel Turinici. Immunity after COVID-19: Protection or sensitization? Mathematical Biosciences, 331(October 2020):108499, 2021. URL: https://doi.org/10.1016/j.mbs.2020.108499, doi:10.1016/j.mbs.2020.108499.">DT21</a>, <a class="reference internal" href="markdown.html#id57" title="Christian Gaebler, Zijun Wang, Julio C.C. Lorenzi, Frauke Muecksch, Shlomo Finkin, Minami Tokuyama, Alice Cho, Mila Jankovic, Dennis Schaefer-Babajew, Thiago Y. Oliveira, Melissa Cipolla, Charlotte Viant, Christopher O. Barnes, Yaron Bram, Gaëlle Breton, Thomas Hägglöf, Pilar Mendoza, Arlene Hurley, Martina Turroja, Kristie Gordon, Katrina G. Millard, Victor Ramos, Fabian Schmidt, Yiska Weisblum, Divya Jha, Michael Tankelevich, Gustavo Martinez-Delgado, Jim Yee, Roshni Patel, Juan Dizon, Cecille Unson-O'Brien, Irina Shimeliovich, Davide F. Robbiani, Zhen Zhao, Anna Gazumyan, Robert E. Schwartz, Theodora Hatziioannou, Pamela J. Bjorkman, Saurabh Mehandru, Paul D. Bieniasz, Marina Caskey, and Michel C. Nussenzweig. Evolution of antibody immunity to SARS-CoV-2. Nature, 591(7851):639–644, 2021. URL: http://dx.doi.org/10.1038/s41586-021-03207-w, doi:10.1038/s41586-021-03207-w.">GWL+21</a>]</span></p>
+</dd>
+<dt>Infectivity</dt><dd><p>Infectivity is usually thought to be rather constant, only depending on outer conditions, such as location, i.e. closed narrow rooms are considered dangerous. But clearly infectivity follows a certain time course after an individual gets infected. On top of this, there is indication some individuals, perhaps depending on genetic variation, have a strong infectivity, called ‘super-spreaders’ <span id="id8">[<a class="reference internal" href="markdown.html#id61" title="Dyani Lewis. Superspreading drives the COVID pandemic - and could help to tame it. Nature, 590(7847):544–546, 2021. doi:10.1038/d41586-021-00460-x.">Lew21</a>, <a class="reference internal" href="markdown.html#id72" title="Roman Wölfel, Victor M. Corman, Wolfgang Guggemos, Michael Seilmaier, Sabine Zange, Marcel A. Müller, Daniela Niemeyer, Terry C. Jones, Patrick Vollmar, Camilla Rothe, Michael Hoelscher, Tobias Bleicker, Sebastian Brünink, Julia Schneider, Rosina Ehmann, Katrin Zwirglmaier, Christian Drosten, and Clemens Wendtner. Virological assessment of hospitalized patients with COVID-2019. Nature, 581(7809):465–469, 2020. doi:10.1038/s41586-020-2196-x.">WolfelCG+20</a>]</span>. However, according to our knowledge, there is no clear data source for this yet.</p>
+</dd>
+<dt>Behaviour</dt><dd><p>Given the location dependency of coronavirus infections, it became clear that behavioural choices by individuals play a crucial role in pandemic spread <span id="id9">[<a class="reference internal" href="markdown.html#id51" title="Peter Jentsch, Madhur Anand, and Chris T Bauch. Prioritising COVID-19 vaccination in changing social and epidemiological landscapes: a mathematical modelling study. The Lancet Infectious Diseases, 21(8):1097–1106, 2021.">JAB21</a>]</span>.</p>
+</dd>
+<dt>Mobility</dt><dd><p>Mobility was identified as a major risk factor  from the beginning of the COVID-19 pandemic, as is the case for most individual to individual infection processes <span id="id10">[<a class="reference internal" href="markdown.html#id58" title="Samuel Heroy, Isabella Loaiza, Alex Pentland, and Neave O'Clery. COVID-19 policy analysis: labour structure dictates lockdown mobility behaviour. Journal of the Royal Society, Interface, 18(176):20201035, 2021. doi:10.1098/rsif.2020.1035.">HLPOClery21</a>, <a class="reference internal" href="markdown.html#id51" title="Peter Jentsch, Madhur Anand, and Chris T Bauch. Prioritising COVID-19 vaccination in changing social and epidemiological landscapes: a mathematical modelling study. The Lancet Infectious Diseases, 21(8):1097–1106, 2021.">JAB21</a>, <a class="reference internal" href="markdown.html#id64" title="Pierre Nouvellet, Sangeeta Bhatia, Anne Cori, Kylie E.C. Ainslie, Marc Baguelin, Samir Bhatt, Adhiratha Boonyasiri, Nicholas F. Brazeau, Lorenzo Cattarino, Laura V. Cooper, Helen Coupland, Zulma M. Cucunuba, Gina Cuomo-Dannenburg, Amy Dighe, Bimandra A. Djaafara, Ilaria Dorigatti, Oliver D. Eales, Sabine L. van Elsland, Fabricia F. Nascimento, Richard G. FitzJohn, Katy A.M. Gaythorpe, Lily Geidelberg, William D. Green, Arran Hamlet, Katharina Hauck, Wes Hinsley, Natsuko Imai, Benjamin Jeffrey, Edward Knock, Daniel J. Laydon, John A. Lees, Tara Mangal, Thomas A. Mellan, Gemma Nedjati-Gilani, Kris V. Parag, Margarita Pons-Salort, Manon Ragonnet-Cronin, Steven Riley, H. Juliette T. Unwin, Robert Verity, Michaela A.C. Vollmer, Erik Volz, Patrick G.T. Walker, Caroline E. Walters, Haowei Wang, Oliver J. Watson, Charles Whittaker, Lilith K. Whittles, Xiaoyue Xi, Neil M. Ferguson, and Christl A. Donnelly. Reduction in mobility and COVID-19 transmission. Nature Communications, 12(1):1–9, 2021. URL: http://dx.doi.org/10.1038/s41467-021-21358-2, doi:10.1038/s41467-021-21358-2.">NBC+21</a>]</span>.</p>
+</dd>
+<dt>Lockdowns</dt><dd><p>The age and location dependency of the coronavirus infection rate implied the only successful policy to combat the pandemic was to isolate vulnerable parts of society, and close places where people would get crowded together. A general decrease of mobility would also decrease risk of infections <span id="id11">[<a class="reference internal" href="markdown.html#id59" title="Enrico Lavezzo, Elisa Franchin, Constanze Ciavarella, Gina Cuomo-Dannenburg, Luisa Barzon, Claudia Del Vecchio, Lucia Rossi, Riccardo Manganelli, Arianna Loregian, Nicolò Navarin, Davide Abate, Manuela Sciro, Stefano Merigliano, Ettore De Canale, Maria Cristina Vanuzzo, Valeria Besutti, Francesca Saluzzo, Francesco Onelia, Monia Pacenti, Saverio G. Parisi, Giovanni Carretta, Daniele Donato, Luciano Flor, Silvia Cocchio, Giulia Masi, Alessandro Sperduti, Lorenzo Cattarino, Renato Salvador, Michele Nicoletti, Federico Caldart, Gioele Castelli, Eleonora Nieddu, Beatrice Labella, Ludovico Fava, Matteo Drigo, Katy A.M. Gaythorpe, Kylie E.C. Ainslie, Marc Baguelin, Samir Bhatt, Adhiratha Boonyasiri, Olivia Boyd, Lorenzo Cattarino, Constanze Ciavarella, Helen L. Coupland, Zulma Cucunubá, Gina Cuomo-Dannenburg, Bimandra A. Djafaara, Christl A. Donnelly, Ilaria Dorigatti, Sabine L. van Elsland, Rich FitzJohn, Seth Flaxman, Katy A.M. Gaythorpe, Will D. Green, Timothy Hallett, Arran Hamlet, David Haw, Natsuko Imai, Benjamin Jeffrey, Edward Knock, Daniel J. Laydon, Thomas Mellan, Swapnil Mishra, Gemma Nedjati-Gilani, Pierre Nouvellet, Lucy C. Okell, Kris V. Parag, Steven Riley, Hayley A. Thompson, H. Juliette T. Unwin, Robert Verity, Michaela A.C. Vollmer, Patrick G.T. Walker, Caroline E. Walters, Haowei Wang, Yuanrong Wang, Oliver J. Watson, Charles Whittaker, Lilith K. Whittles, Xiaoyue Xi, Neil M. Ferguson, Alessandra R. Brazzale, Stefano Toppo, Marta Trevisan, Vincenzo Baldo, Christl A. Donnelly, Neil M. Ferguson, Ilaria Dorigatti, and Andrea Crisanti. Suppression of a SARS-CoV-2 outbreak in the Italian municipality of Vo'. Nature, 584(7821):425–429, 2020. doi:10.1038/s41586-020-2488-1.">LFC+20</a>]</span>.</p>
+</dd>
+<dt>Testing</dt><dd><p>Observed time series report tested individuals. Testing is the only way to know how much infection is out there. There is then a fundamental difference between the intrinsic dynamics of total infected individuals, and how many of these individuals we know they are really infected (or not) because they are counted and reported through testing. From a modelling perspective, this requires to include new dynamic variables or sub-types to follow the time evolution of how many individuals tested positive (or negative), and for how long a test is still reliable <span id="id12">[<a class="reference internal" href="markdown.html#id52" title="T. R. Mercer and M. Salit. Testing at scale during the COVID-19 pandemic. Nat Rev Genet, 22:415–426, 2021. URL: https://doi.org/10.1038/s41576-021-00360-w.">MS21</a>]</span>.</p>
+</dd>
+<dt>Vaccination</dt><dd><p>The rapid development of vaccines gave for the first time rise to the hope that a sufficiently large percentage of populations could be immunised safely to stop the spread of the disease (herd immunity) <span id="id13">[<a class="reference internal" href="markdown.html#id63" title="Smriti Mallapaty. Israel is first to see COVID-infection drop from vaccines. Nature, 590:85, 2021.">Mal21b</a>, <a class="reference internal" href="markdown.html#id70" title="Zijun Wang, Fabian Schmidt, Yiska Weisblum, Frauke Muecksch, Christopher O. Barnes, Shlomo Finkin, Dennis Schaefer-Babajew, Melissa Cipolla, Christian Gaebler, Jenna A. Lieberman, Thiago Y. Oliveira, Zhi Yang, Morgan E. Abernathy, Kathryn E. Huey-Tubman, Arlene Hurley, Martina Turroja, Kamille A. West, Kristie Gordon, Katrina G. Millard, Victor Ramos, Justin Da Silva, Jianliang Xu, Robert A. Colbert, Roshni Patel, Juan Dizon, Cecille Unson-O'Brien, Irina Shimeliovich, Anna Gazumyan, Marina Caskey, Pamela J. Bjorkman, Rafael Casellas, Theodora Hatziioannou, Paul D. Bieniasz, and Michel C. Nussenzweig. mRNA vaccine-elicited antibodies to SARS-CoV-2 and circulating variants. Nature, 2021. URL: http://dx.doi.org/10.1038/s41586-021-03324-6, doi:10.1038/s41586-021-03324-6.">WSW+21</a>]</span>.</p>
+</dd>
+<dt>Mutations</dt><dd><p>These are extremely important at the moment of disease emergence <span id="id14">[<a class="reference internal" href="markdown.html#id50" title="C. E. Brook and A. P. Dobson. Bats as ‘special’ reservoirs for emerging zoonotic pathogens. Trends in Microbiology, 23(3):172–180, 2015.">BD15</a>]</span>, but also the latest twist of the COVID-19 pandemic was the rapid emergence of new mutations of the virus, with some variants observed to be more infectious, and deadlier <span id="id15">[<a class="reference internal" href="markdown.html#id70" title="Zijun Wang, Fabian Schmidt, Yiska Weisblum, Frauke Muecksch, Christopher O. Barnes, Shlomo Finkin, Dennis Schaefer-Babajew, Melissa Cipolla, Christian Gaebler, Jenna A. Lieberman, Thiago Y. Oliveira, Zhi Yang, Morgan E. Abernathy, Kathryn E. Huey-Tubman, Arlene Hurley, Martina Turroja, Kamille A. West, Kristie Gordon, Katrina G. Millard, Victor Ramos, Justin Da Silva, Jianliang Xu, Robert A. Colbert, Roshni Patel, Juan Dizon, Cecille Unson-O'Brien, Irina Shimeliovich, Anna Gazumyan, Marina Caskey, Pamela J. Bjorkman, Rafael Casellas, Theodora Hatziioannou, Paul D. Bieniasz, and Michel C. Nussenzweig. mRNA vaccine-elicited antibodies to SARS-CoV-2 and circulating variants. Nature, 2021. URL: http://dx.doi.org/10.1038/s41586-021-03324-6, doi:10.1038/s41586-021-03324-6.">WSW+21</a>]</span>.</p>
+</dd>
+</dl>
+<p>All of these items in the discussion above can only be incorporated in mathematical models after a scientific classification. Using these models the future of  pandemics can be investigated, including the likelihood of major new outbreaks. The likeliness of viruses like the coronavirus crossing from animals like bats to humans is largely related to habitat and whole ecosystem destruction <span id="id16">[<a class="reference internal" href="markdown.html#id90" title="JM Hassell, T Newbold, AP Dobson, YM Linton, LHV Franklinos, D Zimmerman, and KM Pagenkopp Lohan. Towards an ecosystem model of infectious disease. Nat Ecol Evol, 5(7):907–918, 2021.">HND+21</a>]</span>. Is it possible to achieve herd immunity? How will herd immunity  be influenced by future mutations with different infectivities? Will COVID-19 be staying forever somewhere in the world, or will we be able to eradicate it with our policy measures, and vaccination programmes <span id="id17">[<a class="reference internal" href="markdown.html#id54" title="Christie Aschwanden. Five reasons why COVID herd immunity is probably impossible. Nature, 591(7851):520–522, 2021. doi:10.1038/d41586-021-00728-2.">Asc21</a>]</span>?</p>
+<p>In this paper we only consider <strong>discrete</strong> classifications, see <a class="reference internal" href="#sec-intro-subsec-classification"><span class="std std-numref">Section 1.2</span></a>. After the classification the resulting types will become variables in the mathematical model. However, becoming a variable is not the only possibility to project a dependency of above concepts into a mathematical model. We will introduce rates, a fundamental concept of any dynamic, time-dependent model, and we will also use types which results in a functional dependency of rates at which events occur, such as infections, on the system state.</p>
+</div>
+<div class="section" id="classification-as-structural-model-basis-relation-to-statistics">
+<span id="sec-intro-subsec-classification"></span><h2><span class="section-number">1.2. </span>Classification as Structural Model Basis, Relation to Statistics<a class="headerlink" href="#classification-as-structural-model-basis-relation-to-statistics" title="Permalink to this headline">¶</a></h2>
+<p>To understand our framework model approach, we must first discuss classifications, where objects are grouped into types. Following this idea, we arrive at a simple modelling question: what are the best types or classes<a class="footnote-reference brackets" href="#footnote-classes" id="id18">1</a> which when used to group human individuals serving as basic objects of a mathematical model, can successfully establish a predictive model of the COVID-19 pandemic on the basis of these group interactions? The grouping of individuals we call a type, because all individuals of the group must have a common property, i.e. a type.</p>
+<p>We would like to emphasize that it is the type that is the basic entity that connects our mathematical model to empirical data. In this context the type can be interpreted as a random variable, and the grouping of individuals according to types corresponds to random experiments. Sometimes the random experiment is easy to perform. For example, if we consider a certain population and choose age classes as types, we can simply hand out questionnaires. However, if our type is something like ‘immunity’, elaborate lab work is needed which very likely can only be measured in random samples, i.e. sub-populations.</p>
+<p>The most important type of an individual in this context is the characterisation that an individual is ‘infected’, establishing the type <span class="math notranslate nohighlight">\(I\)</span> as an example. More general, any epidemiological model considers interacting populations of finite-structured types of individuals which we can count inside some system boundaries, like a national or regional territory. Let <span class="math notranslate nohighlight">\(\mathcal{O}\)</span> be the set of <strong>basic objects</strong>, here human individuals of a larger population. The individuals form the system components at the micro-level. In principle, we would need to let <span class="math notranslate nohighlight">\(\mathcal{O}\)</span> to be parametrised by time, because we could allow the set to change when objects either enter or leave the system. But in this description of the pandemic, we assume the population size is fixed, therefore no individuals are allowed to
+‘enter’ or ‘leave’. This means, if we introduce a type <span class="math notranslate nohighlight">\(D\)</span> for ‘dead’ later on, we still count individuals of this type to be part of the population. The single layer classification of an <span class="math notranslate nohighlight">\(SIR\)</span>-model is shown in <a class="reference internal" href="#fig-sec-model-subsec-types"><span class="std std-numref">Fig. 1.1</span></a>.</p>
+<div class="figure align-default" id="fig-sec-model-subsec-types">
+<img alt="_images/basic_classification.svg" src="_images/basic_classification.svg" /><p class="caption"><span class="caption-number">Fig. 1.1 </span><span class="caption-text">The object set for humans based epidemiology are usually individuals. Here, we have three types in the classical classification of human individuals, susceptible (<span class="math notranslate nohighlight">\(S\)</span>), infected (<span class="math notranslate nohighlight">\(I\)</span>) and recovered (<span class="math notranslate nohighlight">\(R\)</span>) individuals. This will be the basic classification of all models discussed, with additional classifications on top of this structure. An edge from individuals to the types, here disease states, indicates the individual are of this type.</span><a class="headerlink" href="#fig-sec-model-subsec-types" title="Permalink to this image">¶</a></p>
+</div>
+<p>The types are also interpreted as a scientific classification of individuals. For each classification we require that an individual is exactly of one type. However, there are possibly many different relevant classifications of individuals, such as age, or disease state etc., and these can exist in parallel. In addition, individuals can be of a certain immunity type, and they can have a certain infectivity, also a type. Let <span class="math notranslate nohighlight">\(\mathcal{T}=\{T_1,\ldots, T_s\}\)</span>, <span class="math notranslate nohighlight">\(s \in \mathbb{N}\)</span>, denote the set of all possible types or individual characteristics, <span class="math notranslate nohighlight">\(s\)</span>  different types in total. It follows that we have created a hypergraph <span class="math notranslate nohighlight">\(H = H(\mathcal{O},\mathcal{T})\)</span>, i.e. the types form a set of hyperlinks, which are non-overlapping. In <a class="reference internal" href="#sec-intro-subsec-intern-extern"><span class="std std-numref">Section 1.4</span></a> we discuss how certain types, like age or location, are either internal or external states of an individual, and have very likely so-called sub-types. The best example is age, where the number of chosen age classes form the sub-types of the age type, i.e. the classification by age. The state of the system is given by the number of basic objects of some type, here number of human individuals that have a type at some time <span class="math notranslate nohighlight">\(t\)</span>. We use the notation that the number of these individuals of type <span class="math notranslate nohighlight">\(T_i\)</span> is given by <span class="math notranslate nohighlight">\(n_i(t) \in \mathbb{N}_0\)</span> for all <span class="math notranslate nohighlight">\(i=1,\ldots,s\)</span>.</p>
+<p>Of course, it is possible that there is more than one system <strong>compartment</strong> in which objects can reside. In this case the types are indexed by compartment, making them compartmental sub-types. An obvious generalisation of the situation discussed here are <strong>multiple compartments</strong>, and such models will have to incorporate movement between compartments. Multi-compartment models can be used to consider <strong>geographical</strong> models of the epidemic. We leave this for future publications.</p>
+</div>
+<div class="section" id="rules">
+<span id="sec-intro-subsec-classification-sub-rules"></span><h2><span class="section-number">1.3. </span>Rules<a class="headerlink" href="#rules" title="Permalink to this headline">¶</a></h2>
+<p>As a next step we introduce rules (or reaction channels). Let <span class="math notranslate nohighlight">\(\mathcal{R}=\{R_1,\ldots, R_r\}\)</span>, <span class="math notranslate nohighlight">\(r \in \mathbb{N}\)</span>,  be the finite set of rules constituting the epidemiological system.  Each rule <span class="math notranslate nohighlight">\(R_j\)</span> with <span class="math notranslate nohighlight">\(j=1,\ldots,r\)</span>, takes the form</p>
+<div class="math notranslate nohighlight" id="equation-eq-sec-model-subsec-reaction-reactionscheme">
+<span class="eqno">(1.1)<a class="headerlink" href="#equation-eq-sec-model-subsec-reaction-reactionscheme" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+    \sum_{i=1}^{s} \alpha_{ij}  T_i  \xrightarrow{k_j} \sum_{i=1}^{s} \beta_{ij}  T_i,
+\end{eqnarray}\]</div>
+<p>where <span class="math notranslate nohighlight">\(k_j\)</span> denotes the rate constant of rule (reaction) <span class="math notranslate nohighlight">\(R_j\)</span>. The sums have to be understood as so-called formal sums (as usual in reaction systems). The coefficients <span class="math notranslate nohighlight">\(\alpha_{ij} \in \mathbb{N}_0\)</span> are the stoichiometric coefficients of types <span class="math notranslate nohighlight">\(T_i\)</span>, <span class="math notranslate nohighlight">\(1 \le i \le s\)</span>, of the {\bf source} side, and  <span class="math notranslate nohighlight">\(\beta_{ij}\in \mathbb{N}_0\)</span> are the stoichiometric coefficients of types <span class="math notranslate nohighlight">\(T_i\)</span> of the {\bf target} side of  transition or reaction <span class="math notranslate nohighlight">\(R_j\)</span>. These stoichiometric coefficients describe changes of individual numbers due to events, such as an infection. Note that either all stoichiometric coefficients on the source side, or all stoichiometric coefficients on the target side are allowed to be zero. In this case, the formal sum is replaced by the empty set  <span class="math notranslate nohighlight">\(\emptyset\)</span>.</p>
+<p>Note that also rules are subject to confirmation by empirical data. In this case the random variable is the rule itself, and the random experiment consists of observing such a transition in the population. For example, it has never been observed that more than one infected person is needed to infect a susceptible person in the COVID-19 pandemic, therefore the stoichiometric coefficients are also observables, i.e. random variables linked to experiments.</p>
+<div class="section" id="global-information">
+<span id="sec-intro-subsec-classification-sub-global"></span><h3><span class="section-number">1.3.1. </span>Global Information<a class="headerlink" href="#global-information" title="Permalink to this headline">¶</a></h3>
+<p>Rules are generalisations of reactions as used in so-called reaction kinetics. In epidemiology, but also other areas of science, there is a need to additionally introduce <strong>global information</strong> into the system description. The idea is that individuals know, for example from the daily news, how many infected people there are in their area, and possibly change their behaviour accordingly. Note that in chemical reaction systems, such global information is completely missing, the atoms or molecules follow only local information, i.e. they experience bumping into each other, but they do not know anything about the reaction partners before a reaction event.</p>
+<p>We assume that the global information is collected from the type set <span class="math notranslate nohighlight">\(\mathcal{T}=\{T_1,\ldots, T_s\}\)</span>, <span class="math notranslate nohighlight">\(s\in \mathbb{N}\)</span>. In this context  <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> will be referred to as {\bf local types}. We introduce the <strong>global information operator</strong> <span class="math notranslate nohighlight">\(\Delta\)</span> and a <strong>global information type set</strong>, or short <strong>global types</strong>, given by <span class="math notranslate nohighlight">\(\mathcal{G}=\{G_1,\ldots, G_g\}\)</span>, <span class="math notranslate nohighlight">\(g \in \mathbb{N}\)</span>. Now let</p>
+<div class="math notranslate nohighlight">
+\[ \Delta \colon \mathcal{T} \to \mathcal{G}. \]</div>
+<p>Therefore, <span class="math notranslate nohighlight">\(\Delta\)</span> takes information from the types of the model, and maps it to global information which can be made known to the system. For example, in an age-structured model, let <span class="math notranslate nohighlight">\(\mathcal T_I=\{ I_1, I_2, \ldots, I_n\}\)</span> denote the types of infected individuals inside <span class="math notranslate nohighlight">\(n\)</span>-different age classes. Let <span class="math notranslate nohighlight">\(\mathcal{G}=\{G_I\}\)</span> be a one-dimensional global information type set, here interpreted as all infected individuals in the system. Then <span class="math notranslate nohighlight">\(\Delta\)</span> is given implicitly by the formal sum</p>
+<div class="math notranslate nohighlight">
+\[ G_I := \sum_{i=1}^{n} I_i. \]</div>
+<p>In general we assume</p>
+<div class="math notranslate nohighlight">
+\[ G_i := F_i(\mathcal{T}), \;\;\; i=1,\ldots,g, \]</div>
+<p>with <span class="math notranslate nohighlight">\(F_i\)</span> some function mapping <span class="math notranslate nohighlight">\(s\)</span> many types to one type. When we introduce a state  <span class="math notranslate nohighlight">\(n_i(t) \in \mathbb{N}_0\)</span> of type <span class="math notranslate nohighlight">\(T_i\)</span> at system time <span class="math notranslate nohighlight">\(t\geq 0\)</span> for <span class="math notranslate nohighlight">\(i=1,\ldots,s\)</span>, see<a class="reference internal" href="modelling-framework.html#sec-intro-subsec-dynamics-sub-mc"><span class="std std-numref">Section 2.1.1</span></a>, then global types will at the same time have derived numerical values.</p>
+</div>
+</div>
+<div class="section" id="sub-classifications-internal-and-external-individual-states">
+<span id="sec-intro-subsec-intern-extern"></span><h2><span class="section-number">1.4. </span>Sub-Classifications, Internal and External Individual States<a class="headerlink" href="#sub-classifications-internal-and-external-individual-states" title="Permalink to this headline">¶</a></h2>
+<p>We consider now the case where we need to further differentiate types into sub-types, which we often also interpret as ‘internal states’ of individuals. The best example in our current context are age classes, but in fact already the <span class="math notranslate nohighlight">\(S\)</span>-<span class="math notranslate nohighlight">\(I\)</span>-<span class="math notranslate nohighlight">\(R\)</span> classification can be interpreted as sub-types of a general disease state. Sub-types therefore are a very important modelling idea for infectious diseases. Because types can now exist of different sub-types, we need to introduce their frequency distribution. Define <span class="math notranslate nohighlight">\(l_i \in \mathbb{N}\)</span> as the number of sub-types of type <span class="math notranslate nohighlight">\(i\)</span> for <span class="math notranslate nohighlight">\(1 \le i \le s\)</span>. Let <span class="math notranslate nohighlight">\(\mu_{ij}^\alpha\)</span> denote the frequency of the sub-type <span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(1\le \alpha \le l_i\)</span>, needed for the source terms in rule  <span class="math notranslate nohighlight">\(R_j\)</span>, called the <strong>source frequency</strong>. We have</p>
+<div class="math notranslate nohighlight">
+\[\mu_{ij}^\alpha =  \frac{n_{ij}^{s,\alpha}}{m^s_{ij}},\]</div>
+<p>where <span class="math notranslate nohighlight">\(n_{ij}^{s,\alpha} \in \mathbb{N}\)</span> is the number of objects (individuals) of type <span class="math notranslate nohighlight">\(i\)</span> and sub-type <span class="math notranslate nohighlight">\(\alpha\)</span> needed for the source terms in rule  <span class="math notranslate nohighlight">\(R_j\)</span>, and <span class="math notranslate nohighlight">\(m^s_{ij} := \sum_{\alpha = 1}^{l_i} n_{ij}^{s,\alpha}\)</span> is the total number of objects of type <span class="math notranslate nohighlight">\(T_i\)</span> needed for reaction <span class="math notranslate nohighlight">\(R_j\)</span>.  The symbol <span class="math notranslate nohighlight">\(s\)</span>  denotes ‘source’. Clearly, we  have</p>
+<div class="math notranslate nohighlight" id="equation-eq-sec-model-subsec-reaction-frac-1">
+<span class="eqno">(1.2)<a class="headerlink" href="#equation-eq-sec-model-subsec-reaction-frac-1" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\sum_{\alpha=1}^{l_i} \mu_{ij}^\alpha = 1 \; \; 
+\end{equation}\]</div>
+<p>for all types  <span class="math notranslate nohighlight">\(i=1,\ldots,s\)</span> and all reactions <span class="math notranslate nohighlight">\(R_j\)</span> for <span class="math notranslate nohighlight">\(j=1,\ldots,r\)</span>.
+Similarly, let <span class="math notranslate nohighlight">\(\nu_{ij}^\alpha\)</span> denote the frequency of the sub-type <span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(1\le \alpha \le l_i\)</span> after rule  <span class="math notranslate nohighlight">\(j\)</span> has been triggered, called the <strong>target frequency</strong>. We have</p>
+<div class="math notranslate nohighlight">
+\[\nu_{ij}^\alpha =  \frac{n_{ij}^{t,\alpha}}{m^t_{ij}},\]</div>
+<p>where <span class="math notranslate nohighlight">\(n_{ij}^{t,\alpha} \in \mathbb{N}\)</span> is the number of objects (individuals) of type <span class="math notranslate nohighlight">\(i\)</span> of sub-type <span class="math notranslate nohighlight">\(\alpha\)</span> as result of the event described by rule  <span class="math notranslate nohighlight">\(R_j\)</span>, and <span class="math notranslate nohighlight">\(m^t_{ij} := \sum_{\alpha = 1}^{l_i} n_{ij}^{t,\alpha}\)</span>.  Here the symbol <span class="math notranslate nohighlight">\(t\)</span> denotes ‘target’. Again we have</p>
+<div class="math notranslate nohighlight" id="equation-eq-sec-model-subsec-reaction-frac-2">
+<span class="eqno">(1.3)<a class="headerlink" href="#equation-eq-sec-model-subsec-reaction-frac-2" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\sum_{\alpha=1}^{l_i} \nu_{ij}^\alpha = 1 
+\end{equation}\]</div>
+<p>for all types  <span class="math notranslate nohighlight">\(i=1,\ldots,s\)</span> and all reactions <span class="math notranslate nohighlight">\(R_j\)</span> for <span class="math notranslate nohighlight">\(j=1,\ldots,r\)</span>.
+The constants <span class="math notranslate nohighlight">\(\mu_{ij}^\alpha,\nu_{ij}^\alpha\in \mathbb{Q}\)</span> specify the frequency of individuals that are necessary for each rule to be realised. They are therefore the frequency analogues of stoichiometric coefficients. Finally we can now write every possible event or rule (or reaction) <span class="math notranslate nohighlight">\(R_j\)</span> in the more general form</p>
+<div class="math notranslate nohighlight" id="equation-eq-reactionscheme-generalised">
+<span class="eqno">(1.4)<a class="headerlink" href="#equation-eq-reactionscheme-generalised" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+\sum_{i=1}^{s} \gamma_{ij} \sum_{\alpha=1}^{l_i}  \mu_{ij}^\alpha T^\alpha_i  \xrightarrow{k_j} \sum_{i=1}^{s} \delta_{ij} \sum_{\alpha=1}^{l_i}  \nu_{ij}^\alpha T^\alpha_i,
+\end{eqnarray}\]</div>
+<p>for <span class="math notranslate nohighlight">\(j=1,...,r\)</span>, where the sums have to be understood again as  formal sums. The coefficients <span class="math notranslate nohighlight">\(\gamma_{ij} \in \mathbb{N}\)</span> are the stoichiometric coefficients of types <span class="math notranslate nohighlight">\(T_i\)</span>, <span class="math notranslate nohighlight">\(1 \le i \le s\)</span>, of the source side, and  <span class="math notranslate nohighlight">\(\delta_{ij}\in \mathbb{N}\)</span> are the stoichiometric coefficients of types <span class="math notranslate nohighlight">\(T_i\)</span> of the target side of rule <span class="math notranslate nohighlight">\(R_j\)</span> with rate constant <span class="math notranslate nohighlight">\(k_j\)</span>. These stoichiometric coefficients describe changes of object numbers, independent of the sub-type of an object of any type. Note that if all types have just a single state or configuration, then the scheme is equivalent to a traditional reaction scheme <a class="reference internal" href="#equation-eq-sec-model-subsec-reaction-reactionscheme">(1.1)</a> by construction. The generalised scheme <a class="reference internal" href="#equation-eq-reactionscheme-generalised">(1.4)</a> is useful, for example, we can use it to establish a varying number of discrete age classes in a single rule.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="footnote-classes"><span class="brackets"><a class="fn-backref" href="#id18">1</a></span></dt>
+<dd><p>later becoming model variables, see <a class="reference internal" href="modelling-framework.html#sec-intro-subsec-dynamics-sub-mc"><span class="std std-numref">Section 2.1.1</span></a>.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "loko58/booktest.git",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="abstract.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Abstract</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="modelling-framework.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Modelling Framework</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By COVID19 group<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

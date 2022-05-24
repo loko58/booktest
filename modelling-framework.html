@@ -1,0 +1,530 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2. Modelling Framework &#8212; A RULE-BASED EPIDEMIOLOGICAL FRAMEWORK FOR MODELLING &amp; SIMULATION</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"TeX": {"Macros": {"N": "\\mathbb{N}", "di": "\\mathop{}\\!\\mathrm{d}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3. Essential Models of an Epidemiological Modelling Framework" href="essential-models.html" />
+    <link rel="prev" title="1. Introduction" href="introduction.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/RBSE.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">A RULE-BASED EPIDEMIOLOGICAL FRAMEWORK FOR MODELLING & SIMULATION</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="abstract.html">
+   Abstract
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2. Modelling Framework
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="essential-models.html">
+   3. Essential Models of an Epidemiological Modelling Framework
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/SIR.html">
+     3.1. SIR Model
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/modelling-framework.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/loko58/booktest.git"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/loko58/booktest.git/issues/new?title=Issue%20on%20page%20%2Fmodelling-framework.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introducing-dynamics">
+   2.1. Introducing Dynamics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#continuous-time-markov-chains-including-global-information">
+     2.1.1. Continuous-Time Markov Chains Including Global Information
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gillespies-algorithm">
+     2.1.2. Gillespie’s Algorithm
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Modelling Framework</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introducing-dynamics">
+   2.1. Introducing Dynamics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#continuous-time-markov-chains-including-global-information">
+     2.1.1. Continuous-Time Markov Chains Including Global Information
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gillespies-algorithm">
+     2.1.2. Gillespie’s Algorithm
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="modelling-framework">
+<span id="sec-framework"></span><h1><span class="section-number">2. </span>Modelling Framework<a class="headerlink" href="#modelling-framework" title="Permalink to this headline">¶</a></h1>
+<p>We are now able to present our epidemiological framework in more detail. We first look briefly at the connection to structural (static) modelling.</p>
+<div class="section" id="introducing-dynamics">
+<span id="sec-intro-subsec-dynamics"></span><h2><span class="section-number">2.1. </span>Introducing Dynamics<a class="headerlink" href="#introducing-dynamics" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="continuous-time-markov-chains-including-global-information">
+<span id="sec-intro-subsec-dynamics-sub-mc"></span><h3><span class="section-number">2.1.1. </span>Continuous-Time Markov Chains Including Global Information<a class="headerlink" href="#continuous-time-markov-chains-including-global-information" title="Permalink to this headline">¶</a></h3>
+<p>In this section, we formulate reactions <a class="reference internal" href="introduction.html#equation-eq-sec-model-subsec-reaction-reactionscheme">(1.1)</a> as a continuous-time Markov chain. We regard the size/number <span class="math notranslate nohighlight">\(n_i(t)  \in \mathbb{N}\)</span> of type <span class="math notranslate nohighlight">\(T_i\)</span> at system time <span class="math notranslate nohighlight">\(t\geq 0\)</span> for <span class="math notranslate nohighlight">\(i=1,\ldots,s\)</span> as discrete random variables with values in <span class="math notranslate nohighlight">\(\{0,\ldots,N\}\)</span>.  For defining the transition probabilities associated with the stochastic process we assume that the process is time-homogeneous (autonomous), i.e.,  while no event occurs, the transition probabilities remain constant, and depend only on the time between events <span class="math notranslate nohighlight">\(\Delta t\)</span>, but not on the specific time <span class="math notranslate nohighlight">\(t\)</span>. We observe the system from time <span class="math notranslate nohighlight">\(0\)</span> up to time <span class="math notranslate nohighlight">\(T&gt;0\)</span>. In addition, we suppose that the Markov property is satisfied, that is, the probability distribution of a future state of the stochastic process at time <span class="math notranslate nohighlight">\(t+\Delta t\)</span> only depends on the current state at time <span class="math notranslate nohighlight">\(t\)</span>, but not on any state prior to <span class="math notranslate nohighlight">\(t\)</span>.  With each type <span class="math notranslate nohighlight">\(T_i\)</span> having an associated state <span class="math notranslate nohighlight">\(n_i(t)  \in \mathbb{N}\)</span>, the global type set <span class="math notranslate nohighlight">\(\mathcal{G}=\{G_1,\ldots, G_g\}\)</span>, see <a class="reference internal" href="introduction.html#sec-intro-subsec-classification-sub-global"><span class="std std-numref">Section 1.3.1</span></a>, get derived numerical values which are. We assume at system time <span class="math notranslate nohighlight">\(t\geq 0\)</span> to obtain the {\bf global state vector} <span class="math notranslate nohighlight">\(\theta(t) := (\theta_1(t), \ldots, \theta_g(t))\)</span>, with <span class="math notranslate nohighlight">\(\theta_i \in  \mathbb{R}\)</span> for <span class="math notranslate nohighlight">\(1 \le i \le g\)</span>. Given the system is in state (or configuration) <span class="math notranslate nohighlight">\(n\)</span>, we introduce the propensities <span class="math notranslate nohighlight">\(\kappa_j(t^\prime,n)\)</span> for <span class="math notranslate nohighlight">\(j=1,\ldots,r\)</span>. Here, the propensity <span class="math notranslate nohighlight">\(\kappa_j(t^\prime, n)\)</span> of the <span class="math notranslate nohighlight">\(j\)</span>th reaction <span class="math notranslate nohighlight">\(R_j\)</span> is the probability that the <span class="math notranslate nohighlight">\(j\)</span>th event/reaction occurs within an infinitesimal time interval, the last event in the entire system happened at <span class="math notranslate nohighlight">\(t^\prime\)</span>, and is given by</p>
+<div class="math notranslate nohighlight" id="equation-eq-propensity">
+<span class="eqno">(2.1)<a class="headerlink" href="#equation-eq-propensity" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+ \kappa_j(t^\prime, n) = k_j f_j (\theta(t^\prime,n))  \prod_{i=1}^s   \begin{pmatrix} n_i \\ \alpha_{ij} \end{pmatrix},
+\end{align}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\kappa_j(\theta(t^\prime))\)</span> denotes the global state dependent propensities of reaction <span class="math notranslate nohighlight">\(R_j\)</span>, <span class="math notranslate nohighlight">\(k_j\)</span> is the reaction constant, and the combinatorial factor reflects the number of ways in which reaction <span class="math notranslate nohighlight">\(R_j\)</span> may happen, see <a class="reference internal" href="introduction.html#equation-eq-sec-model-subsec-reaction-reactionscheme">(1.1)</a>. The functions <span class="math notranslate nohighlight">\(f_j\)</span>, <span class="math notranslate nohighlight">\(1 \le j \le r\)</span>, are called <strong>global information functional responses</strong>. These functions modify the rule execution constants <span class="math notranslate nohighlight">\(k_j\)</span> according to the state of the given global information vector <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
+<div class="proof remark admonition" id="rem:no-explicit-time-dependence-notation">
+<p class="admonition-title"><span class="caption-number">Remark 2.1 </span></p>
+<div class="remark-content section" id="proof-content">
+<p>Note that the notation <span class="math notranslate nohighlight">\(\kappa_j(t^\prime, n)\)</span> suggests time-dependence, which is not the case, therefore simply writing <span class="math notranslate nohighlight">\(\kappa_j(n)\)</span> is equally valid and will be adopted sometimes. The notation is just a reminder that the propensity depends on the last event that happened in the system, as then the global information available to the system is updated. Time-homogeneity and the Markov property are still valid piecewise. In more sophisticated situations however, such as externally imposed lockdowns, the time-dependency of the propensity <span class="math notranslate nohighlight">\(\kappa_j\)</span> will have to be considered explicitly.</p>
+</div>
+</div><p>We use some standard algebraic expressions for global information functional responses <span class="math notranslate nohighlight">\(f_j(\theta)\)</span> in case <span class="math notranslate nohighlight">\(\theta\)</span> is one-dimensional and non-negative:</p>
+<dl class="simple myst">
+<dt>Simple Saturation</dt><dd><div class="math notranslate nohighlight">
+\[ f_j(\theta) := \frac{1}{1+ \lambda_j \theta}. \]</div>
+</dd>
+</dl>
+<p>Here <span class="math notranslate nohighlight">\(\lambda_j\)</span> is an additional positive parameter. We also consider <span class="math notranslate nohighlight">\( \frac{1}{f_j}\)</span> in case the functional response has to be monotonically decreasing, due to modelling purposes.</p>
+<dl class="simple myst">
+<dt>Michaelis-Menten</dt><dd><div class="math notranslate nohighlight">
+\[ f_j(\theta) := \frac{1}{\lambda_j + \theta}. \]</div>
+</dd>
+</dl>
+<p>Here <span class="math notranslate nohighlight">\(\lambda_j\)</span> is an additional positive parameter. Alternatively, we may consider <span class="math notranslate nohighlight">\( \frac{1}{f_j}\)</span> in case the functional response is monotonically decreasing.</p>
+<dl class="simple myst">
+<dt>Exponential</dt><dd><div class="math notranslate nohighlight">
+\[ f_j(\theta) :=  \lambda_j e^{-\lambda_j \theta}. \]</div>
+</dd>
+</dl>
+<p>Here <span class="math notranslate nohighlight">\(\lambda_j\)</span> is an additional positive parameter. The exponential functional response gives rise to a probability measure <span class="math notranslate nohighlight">\(P_j\)</span>, with distribution function <span class="math notranslate nohighlight">\(F_j (\theta) = 1 -  \lambda_j e^{-\lambda_j \theta}\)</span>, and is called <strong>exponential distribution</strong>. For <span class="math notranslate nohighlight">\(\epsilon&gt;0\)</span>, we define a loss rate <span class="math notranslate nohighlight">\(\lambda(\theta)\)</span> by</p>
+<div class="math notranslate nohighlight">
+\[ \lambda(\theta) := \lim_{\epsilon \to 0} \frac{P((\theta,\theta + \epsilon])}{P((\theta,\infty))}. \]</div>
+<p>It follows that</p>
+<div class="math notranslate nohighlight">
+\[ \lambda(\theta) =  \frac{f_j(\theta)}{1-F_j (\theta)}. \]</div>
+<dl class="simple myst">
+<dt>Weibull</dt><dd><div class="math notranslate nohighlight">
+\[ f_j(\theta) :=   \lambda_{j,1} \lambda_{j,2} \theta^{ \lambda_{j,2} - 1} e^{- \lambda_{j,1} \theta^{\lambda_{j,2}}}. \]</div>
+</dd>
+</dl>
+<p>Here <span class="math notranslate nohighlight">\(\lambda_{j,1}, \lambda_{j,2}\)</span> are  positive parameters. Note that for <span class="math notranslate nohighlight">\(\lambda_{j,2}=1\)</span>, <span class="math notranslate nohighlight">\(f_j\)</span> reduces to the exponential distribution.</p>
+<p>If the global state vector <span class="math notranslate nohighlight">\(\theta(t) := (\theta_1(t), \ldots, \theta_g(t))\)</span> has dimension <span class="math notranslate nohighlight">\(g&gt;1\)</span>, then each of the global information functional responses is assumed to be given in a multiplicative way by <span class="math notranslate nohighlight">\(g\)</span>-many sub-functionals, each dependent on one component of <span class="math notranslate nohighlight">\(\theta\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[ f_j (\theta) = f_{j,1}(\theta_1)f_{j,2}(\theta_2)\cdots f_{j,g}(\theta_g), \]</div>
+<p>where each  <span class="math notranslate nohighlight">\(f_{j,i}\)</span> is given by one of the one-dimensional algebraic expressions given above. From a modelling point of view, this assumes different global information states have an independent influence on the event rate of a rule, such as an infection. An example would be avoidance and mobility. Avoidance can be modelled by a monotonically decreasing functional response, mobility as a monotonically increasing functional response. Now, based on the assumption that at most one reaction can occur within an infinitesimal time interval <span class="math notranslate nohighlight">\(\Delta t\)</span>, the transition rates for the Markov process, given that the system is in state <span class="math notranslate nohighlight">\(n\)</span>, can then be approximated as <span class="math notranslate nohighlight">\(\kappa_j(n)\Delta t\)</span> for reaction <span class="math notranslate nohighlight">\(R_j\)</span> to occur within time interval <span class="math notranslate nohighlight">\(\Delta t\)</span> and <span class="math notranslate nohighlight">\(1-\sum_{j=1}^r \kappa_j(n)\Delta t\)</span> for no reaction to occur within time interval <span class="math notranslate nohighlight">\(\Delta t\)</span>. To simulate the sample paths of the continuous-time Markov chain, one can apply the Gillespie algorithm. The simulation of many trajectories of the system  allows the computation of the statistics of evolution.</p>
+</div>
+<div class="section" id="gillespies-algorithm">
+<span id="sec-intro-subsec-dynamics-sub-gillespie"></span><h3><span class="section-number">2.1.2. </span>Gillespie’s Algorithm<a class="headerlink" href="#gillespies-algorithm" title="Permalink to this headline">¶</a></h3>
+<p>The most important stochastic update idea for epidemiological models is <strong>Gillespie’s Stochastic Simulation Algorithm (SSA)</strong> and its generalisation. It is the main algorithm used to study the stochastic evolution of the models presented in this paper. This evolution arises due to the interactions among types <span class="math notranslate nohighlight">\(\mathcal{T}\)</span> and, in the language of reaction schemes, can be expressed  as a reaction network. Reaction <span class="math notranslate nohighlight">\(R_j\)</span> is given by Equation <a class="reference internal" href="introduction.html#equation-eq-sec-model-subsec-reaction-reactionscheme">(1.1)</a> for <span class="math notranslate nohighlight">\(j=1, \ldots, r\)</span>, where <span class="math notranslate nohighlight">\(k_j\)</span> denotes the rate constant of reaction <span class="math notranslate nohighlight">\(R_j\)</span>. Interpreting a reaction as a rule, we will use the terms <em>reaction</em> and <em>rule</em> interchangeably. Each process occurs with a <em>propensity</em> <span class="math notranslate nohighlight">\(\kappa_j(n)\)</span>, defined as</p>
+<div class="math notranslate nohighlight" id="equation-eq-rj">
+<span class="eqno">(2.2)<a class="headerlink" href="#equation-eq-rj" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+ \kappa_j(n) := k_j \, h_{j} (n),
+\end{equation}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} h_j(n) := \prod_{i=1}^s   \begin{pmatrix} n_i \\ \alpha_{ij} \end{pmatrix}.\end{split}\]</div>
+<p>Here, the combinatorial factor <span class="math notranslate nohighlight">\(h_j\)</span> describes the number of ways in which reaction <span class="math notranslate nohighlight">\(R_j\)</span> takes place. As in the original paper <span id="id1">[<a class="reference internal" href="markdown.html#id11" title="Daniel T Gillespie. A general method for numerically simulating the stochastic time evolution of coupled chemical reactions. Journal of Computational Physics, 22(4):403 - 434, 1976. URL: http://www.sciencedirect.com/science/article/pii/0021999176900413, doi:https://doi.org/10.1016/0021-9991(76)90041-3.">Gil76</a>]</span> by Gillespie, we make the following assumption:</p>
+<div class="proof axiom admonition" id="Gillespie_assumption">
+<p class="admonition-title"><span class="caption-number">Axiom 2.1 </span></p>
+<div class="axiom-content section" id="proof-content">
+<p>Reaction <span class="math notranslate nohighlight">\(R_j\)</span> occurs within a time interval <span class="math notranslate nohighlight">\(\Delta t\)</span> with probability <span class="math notranslate nohighlight">\(\kappa_j(n)\Delta t\)</span>.</p>
+</div>
+</div><p>For a given population with system configuration <span class="math notranslate nohighlight">\(n \in \mathbb{R}^s\)</span>, one can  show (see <span id="id2">[<a class="reference internal" href="markdown.html#id11" title="Daniel T Gillespie. A general method for numerically simulating the stochastic time evolution of coupled chemical reactions. Journal of Computational Physics, 22(4):403 - 434, 1976. URL: http://www.sciencedirect.com/science/article/pii/0021999176900413, doi:https://doi.org/10.1016/0021-9991(76)90041-3.">Gil76</a>]</span>) that the probability density associated with the occurrence of <span class="math notranslate nohighlight">\(R_j\)</span> is given by</p>
+<div class="math notranslate nohighlight" id="equation-eq-gillespie-prob-pi">
+<span class="eqno">(2.3)<a class="headerlink" href="#equation-eq-gillespie-prob-pi" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\Phi_j(n,t)=\kappa_j(\theta(n),n)\exp\left(-\sum_{l=1}^r\kappa_l(\theta(n), n)\,t\right)
+\end{equation}\]</div>
+<p>as a function of time <span class="math notranslate nohighlight">\(t\)</span>. The probability that reaction <span class="math notranslate nohighlight">\(R_j\)</span> ever occurs is given by</p>
+<div class="math notranslate nohighlight" id="equation-eq-rho-i-standardgil">
+<span class="eqno">(2.4)<a class="headerlink" href="#equation-eq-rho-i-standardgil" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\rho_j(n)=\int_0^\infty \di t'\,\Phi_j(n,t')=\frac{\kappa_j(\theta(n),n)}{\sum_{l=1}^r \kappa_l(\theta(n),n)}
+\end{equation}\]</div>
+<p>for  <span class="math notranslate nohighlight">\(j\in\{1,...,r\}\)</span>. The rules given by Equation <a class="reference internal" href="introduction.html#equation-eq-sec-model-subsec-reaction-reactionscheme">(1.1)</a>  generate a stochastic process which satisfies the Markov property due to <a class="reference internal" href="#Gillespie_assumption">Axiom 2.1</a>. This process is  the starting point for the derivation of the master equation, describing the time evolution of the probability distribution of the system as a whole (see <span id="id3">[<a class="reference internal" href="markdown.html#id9" title="C. Gardiner. Stochastic Methods: A Handbook for the Natural and Social Sciences. Springer Series in Synergetics. Springer Berlin Heidelberg, 2009. ISBN 9783540707127. URL: https://books.google.co.uk/books?id=otg3PQAACAAJ.">Gar09</a>]</span>). The probability density in <a class="reference internal" href="#equation-eq-gillespie-prob-pi">(2.3)</a> can  be interpreted  in terms of reaction waiting times and, in fact, instead of Assumption <a class="reference internal" href="#Gillespie_assumption">Axiom 2.1</a>, we can equivalently assume that  reaction <span class="math notranslate nohighlight">\(R_j\)</span> occurs with an <em>exponentially distributed</em> reaction waiting time. In <span id="id4">[<a class="reference internal" href="markdown.html#id11" title="Daniel T Gillespie. A general method for numerically simulating the stochastic time evolution of coupled chemical reactions. Journal of Computational Physics, 22(4):403 - 434, 1976. URL: http://www.sciencedirect.com/science/article/pii/0021999176900413, doi:https://doi.org/10.1016/0021-9991(76)90041-3.">Gil76</a>]</span> Gillespie showed that the master equation can be exactly solved through the construction of realisations of the stochastic process associated to <a class="reference internal" href="introduction.html#equation-eq-sec-model-subsec-reaction-reactionscheme">(1.1)</a>. This is achieved through the following algorithm, where <span class="math notranslate nohighlight">\(::=\)</span> denotes replacement:</p>
+<div class="proof algorithm admonition" id="alg:sec:model:subsec:gillespie">
+<p class="admonition-title"><span class="caption-number">Algorithm 2.1 </span> (Gillespie Algorithm)</p>
+<div class="algorithm-content section" id="proof-content">
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">pseudo-code</label><div class="tab-content docutils">
+<ol class="arabic simple" start="0">
+<li><p>Initialize the starting time <span class="math notranslate nohighlight">\(t\)</span>, the system configuration <span class="math notranslate nohighlight">\(n=(n_1,\ldots,n_s)\)</span> and the rate constants <span class="math notranslate nohighlight">\(k_j\)</span> for <span class="math notranslate nohighlight">\(j=1,\ldots,r\)</span>.</p></li>
+<li><p>Generate two random numbers <span class="math notranslate nohighlight">\(r_1, r_2\)</span> uniformly distributed in <span class="math notranslate nohighlight">\([0,1]\)</span>.</p></li>
+<li><p>Set <span class="math notranslate nohighlight">\(\Phi:= \sum_{l=1}^r \kappa_l (n)\)</span> and compute <span class="math notranslate nohighlight">\(\tau:= -\frac{1}{\Phi} \ln r_1\)</span>.</p></li>
+<li><p>Set <span class="math notranslate nohighlight">\(t::=t+\tau\)</span> as the time of the next rule execution.</p></li>
+<li><p>Determine the reaction <span class="math notranslate nohighlight">\(R_i\)</span> which is executed at time <span class="math notranslate nohighlight">\(t\)</span> by finding <span class="math notranslate nohighlight">\(i\)</span> such that</p></li>
+</ol>
+<div class="math notranslate nohighlight" id="equation-eq-conditiongillespie">
+<span class="eqno">(2.5)<a class="headerlink" href="#equation-eq-conditiongillespie" title="Permalink to this equation">¶</a></span>\[\begin{align}
+ \frac{1}{\Phi} \sum_{l=1}^{i-1}\kappa_l (n)&lt;   r_2 \leq \frac{1}{\Phi} \sum_{l=1}^{i}\kappa_l (n).
+\end{align}\]</div>
+<ol class="arabic simple" start="5">
+<li><p>Execute rule <span class="math notranslate nohighlight">\(R_i\)</span> and update the new system configuration <span class="math notranslate nohighlight">\(n\)</span>.</p></li>
+<li><p>Go to step 1 if <span class="math notranslate nohighlight">\(t&lt;T\)</span>, otherwise stop.</p></li>
+</ol>
+</div>
+<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">python</label><div class="tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Gillespie</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">Sinit</span><span class="p">,</span> <span class="n">Iinit</span><span class="p">,</span> <span class="n">Rinit</span><span class="p">,</span> <span class="n">Dinit</span><span class="p">,</span>
+              <span class="n">seed</span><span class="p">,</span>
+              <span class="n">updateStates</span><span class="p">,</span> <span class="n">updatePropensities</span><span class="p">,</span>
+              <span class="o">**</span><span class="n">kwargs</span>
+              <span class="p">):</span>
+    
+    <span class="c1"># Inital values</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="mf">0.</span>
+    <span class="n">S</span> <span class="o">=</span> <span class="n">Sinit</span>
+    <span class="n">I</span> <span class="o">=</span> <span class="n">Iinit</span>
+    <span class="n">R</span> <span class="o">=</span> <span class="n">Rinit</span>
+    <span class="n">D</span> <span class="o">=</span> <span class="n">Dinit</span>
+    
+    <span class="c1"># Vectors for time series</span>
+    <span class="n">time</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span><span class="p">]</span>
+    <span class="n">Ss</span>   <span class="o">=</span> <span class="p">[</span><span class="n">S</span><span class="p">]</span>
+    <span class="n">Is</span>   <span class="o">=</span> <span class="p">[</span><span class="n">I</span><span class="p">]</span>
+    <span class="n">Rs</span>   <span class="o">=</span> <span class="p">[</span><span class="n">R</span><span class="p">]</span>
+    <span class="n">Ds</span>   <span class="o">=</span> <span class="p">[</span><span class="n">D</span><span class="p">]</span>
+
+    
+    <span class="c1"># Random Generator</span>
+    <span class="n">rg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+
+    <span class="c1"># Main loop</span>
+    <span class="k">while</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="n">T</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">I</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span> <span class="c1"># no infectives any more means epidemic dies out</span>
+            <span class="k">break</span>
+            
+        <span class="c1"># First uniformily distributed ranmdom number for reaction time</span>
+        <span class="n">r1</span>  <span class="o">=</span> <span class="n">rg</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">)</span>
+        
+        <span class="c1"># Propensities calculation</span>
+        <span class="n">kappa</span> <span class="o">=</span> <span class="n">updatePropensities</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">I</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">Phi</span>   <span class="o">=</span> <span class="n">kappa</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+        
+        <span class="c1"># waiting time tau</span>
+        <span class="n">tau</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">r1</span><span class="p">)</span> <span class="o">/</span> <span class="n">Phi</span>
+        <span class="n">t</span>   <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">tau</span>
+  
+        <span class="c1"># Second uniformily distributed random number for executed reaction</span>
+        <span class="n">r2</span> <span class="o">=</span> <span class="n">rg</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">)</span>
+        
+        <span class="c1"># Rule determined to be executed</span>
+        <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">kappa</span><span class="p">)</span> <span class="o">/</span> <span class="n">Phi</span>
+        <span class="n">rExc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">searchsorted</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="n">side</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+        
+        <span class="c1"># Update states</span>
+        <span class="n">S</span><span class="p">,</span> <span class="n">I</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">D</span> <span class="o">=</span> <span class="n">updateStates</span><span class="p">(</span><span class="n">rExc</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">I</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span>
+        
+        <span class="c1"># Append new values</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+        <span class="n">Ss</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+        <span class="n">Is</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+        <span class="n">Rs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+        <span class="n">Ds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
+        
+    <span class="k">return</span> <span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">Ss</span><span class="p">,</span> <span class="n">Is</span><span class="p">,</span> <span class="n">Rs</span><span class="p">,</span> <span class="n">Ds</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><p>The random numbers generated in <a class="reference internal" href="#alg:sec:model:subsec:gillespie">Algorithm 2.1</a> are used for determining the index <span class="math notranslate nohighlight">\(i\)</span> of the next rule to be triggered, and the time interval <span class="math notranslate nohighlight">\(\tau\)</span> for reaction <span class="math notranslate nohighlight">\(R_i\)</span> to occur. By the definition of <span class="math notranslate nohighlight">\(\rho_l(n)\)</span> in <a class="reference internal" href="#equation-eq-rho-i-standardgil">(2.4)</a> we have</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\Phi} \sum_{l=1}^i \kappa_l(n)=\sum_{l=1}^i \int_0^\infty \di t'\,\Phi_l(n,t')=\sum_{l=1}^{i}\rho_l (n)\]</div>
+<p>in step 4 in <a class="reference internal" href="#alg:sec:model:subsec:gillespie">Algorithm 2.1</a>. We use Gillespie’s algorithm to simulate the model dynamics, based on the assumption that the processes have exponentially distributed waiting times or, equivalently, that they are all Poisson processes, like atomic or molecular mixtures of gases or liquids. In complex systems formed by types which are heterogeneous and evolve through diverse interactions that cannot be always characterised by <em>exponentially distributed waiting times</em>, therefore the Gillespie approach is not fully adequate. It is thus very important to have a generalisation of Gillespie’s algorithm that allows us to study systems driven by processes with different waiting time distributions and not necessarily exponentially distributed waiting times. Several generalisations exist in the literature, see <span id="id5">[<a class="reference internal" href="markdown.html#id6" title="Tomás Aquino and Marco Dentz. Chemical continuous time random walks. Phys. Rev. Lett., 119:230601, Dec 2017. URL: https://link.aps.org/doi/10.1103/PhysRevLett.119.230601, doi:10.1103/PhysRevLett.119.230601.">AD17</a>]</span>, <span id="id6">[<a class="reference internal" href="markdown.html#id12" title="D.T. Gillespie. Master equations for random walks with arbitrary pausing time distributions. Physics Letters A, 64(1):22 - 24, 1977. URL: http://www.sciencedirect.com/science/article/pii/0375960177905138, doi:https://doi.org/10.1016/0375-9601(77)90513-8.">Gil77</a>]</span>, <span id="id7">[<a class="reference internal" href="markdown.html#id15" title="N. Masuda and L. E. C. Rocha. A gillespie algorithm for non-markovian stochastic processes. SIAM REVIEW, 60(1):95-115, 2018.">MR18</a>]</span> and <span id="id8">[<a class="reference internal" href="markdown.html#id8" title="Marian Boguñá, Luis F. Lafuerza, Raúl Toral, and M. Ángeles Serrano. Simulating non-markovian stochastic processes. Phys. Rev. E, 90:042108, Oct 2014. URL: https://link.aps.org/doi/10.1103/PhysRevE.90.042108, doi:10.1103/PhysRevE.90.042108.">BogunaLTS14</a>]</span> for instance,
+where a generalised Gillespie algorithm based on a generalised master equation in the form of an integro-differential equation <span id="id9">[<a class="reference internal" href="markdown.html#id6" title="Tomás Aquino and Marco Dentz. Chemical continuous time random walks. Phys. Rev. Lett., 119:230601, Dec 2017. URL: https://link.aps.org/doi/10.1103/PhysRevLett.119.230601, doi:10.1103/PhysRevLett.119.230601.">AD17</a>]</span> may be considered.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "loko58/booktest.git",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="introduction.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">1. </span>Introduction</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="essential-models.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Essential Models of an Epidemiological Modelling Framework</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By COVID19 group<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

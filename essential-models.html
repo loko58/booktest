@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome to your Jupyter Book &#8212; A RULE-BASED EPIDEMIOLOGICAL FRAMEWORK FOR MODELLING &amp; SIMULATION</title>
+    <title>3. Essential Models of an Epidemiological Modelling Framework &#8212; A RULE-BASED EPIDEMIOLOGICAL FRAMEWORK FOR MODELLING &amp; SIMULATION</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -28,6 +28,8 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -39,6 +41,7 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -51,8 +54,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"TeX": {"Macros": {"N": "\\mathbb{N}", "di": "\\mathop{}\\!\\mathrm{d}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3.1. SIR Model" href="notebooks/SIR.html" />
+    <link rel="prev" title="2. Modelling Framework" href="modelling-framework.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -96,30 +103,44 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modelling-framework.html">
+   2. Modelling Framework
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   3. Essential Models of an Epidemiological Modelling Framework
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notebooks/SIR.html">
+     3.1. SIR Model
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="markdown.html">
-   Markdown Files
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notebooks.html">
-   Content with notebooks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="markdown-notebooks.html">
-   Notebooks with MyST Markdown
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="launchbuttons.html">
-   Launch into interactive computing interfaces
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="thebe.html">
-   Make your code cells executable
+  <a class="reference internal" href="bibliography.html">
+   Bibliography
   </a>
  </li>
 </ul>
@@ -163,7 +184,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/intro.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/essential-models.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -183,7 +204,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/loko58/booktest.git/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/loko58/booktest.git/issues/new?title=Issue%20on%20page%20%2Fessential-models.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -211,7 +232,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Welcome to your Jupyter Book</h1>
+                <h1>Essential Models of an Epidemiological Modelling Framework</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -222,13 +243,35 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="welcome-to-your-jupyter-book">
-<h1>Welcome to your Jupyter Book<a class="headerlink" href="#welcome-to-your-jupyter-book" title="Permalink to this headline">¶</a></h1>
-<p>This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out <a class="reference external" href="https://jupyterbook.org">the Jupyter Book documentation</a> for more information.</p>
-<p>Check out the content pages bundled with this sample book to see more.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="essential-models-of-an-epidemiological-modelling-framework">
+<span id="sec-standardmodels"></span><h1><span class="section-number">3. </span>Essential Models of an Epidemiological Modelling Framework<a class="headerlink" href="#essential-models-of-an-epidemiological-modelling-framework" title="Permalink to this headline">¶</a></h1>
+<p>In this section we discuss some simple epidemiological models  and introduce precursor models  consistent with our framework approach from <a class="reference internal" href="modelling-framework.html#sec-framework"><span class="std std-numref">Section 2</span></a>. The precursor models  will only consider some of the rules required to close the models, and will be studied in detail in subsequent publications. The precursor models focus on the mathematical modelling challenges  mentioned in <a class="reference internal" href="introduction.html#sec-intro-subsec-challenges"><span class="std std-numref">Section 1.1</span></a>.</p>
+<p>We repeat and specify further the general assumptions used to derive %and solve
+the stochastic and differential equation formulations of the rules:</p>
+<dl class="simple myst">
+<dt>Mass Action Principle / Transmission</dt><dd><p>The propensities of the single rules are directly proportional to the product of the number of individuals in the source involved species. For two species this is equivalent to individuals randomly bumping into each other. In this case we choose a frequency-dependent transmission <span id="id1">[<a class="reference internal" href="markdown.html#id45" title="Hamish McCallum, Nigel Barlow, and Jim Hone. How should pathogen transmission be modelled? Trends in Ecology &amp; Evolution, 16(6):295–300, June 2001. URL: https://www.sciencedirect.com/science/article/pii/S0169534701021449 (visited on 2021-09-29), doi:10.1016/S0169-5347(01)02144-9.">MBH01</a>]</span>, with <span class="math notranslate nohighlight">\(\frac{1}{N}\)</span> as part of the factor, neglecting the subtraction of deceased individuals. <span class="math notranslate nohighlight">\(N\)</span> can be interpreted as fixed size of a reaction volume, where human beings departed because of COVID-19 left irreplaceable space in the society. Or differently interpreted, as a first approximation, the whole population is not shrinking too much due to disease-induced mortality. We are aware that this is, in some cases, particularly when mortality is high, an oversimplication that will have to be addressed in real-life applications in the future. For switching between different transmissions see <span id="id2">[<a class="reference internal" href="markdown.html#id46" title="Julien Arino and C. Connell McCluskey. Effect of a sharp change of the incidence function on the dynamics of a simple disease. Journal of Biological Dynamics, 4(5):490–505, September 2010. Publisher: Taylor &amp; Francis _eprint: https://doi.org/10.1080/17513751003793017. URL: https://doi.org/10.1080/17513751003793017 (visited on 2021-09-29), doi:10.1080/17513751003793017.">AM10</a>]</span>.</p>
+</dd>
+<dt>Closed Population</dt><dd><p>We consider neither natural birth or death, nor migration. All deceased individuals died of COVID.</p>
+</dd>
+<dt>Exclusivity</dt><dd><p>All types or subtypes are mutually exclusive, unless induced by the type hierarchy.</p>
+</dd>
+<dt>Homogeneous Types</dt><dd><p>All individuals of a specific type or subtype are homogeneous regarding to behaviour and disease, and equally affected by the respective rules.</p>
+</dd>
+<dt>Immunity</dt><dd><p>By recovering an individual acquires complete everlasting immunity and is not contagious any more, unless otherwise stated.</p>
+</dd>
+<dt>Start</dt><dd><p>We assume that at time <span class="math notranslate nohighlight">\(t = 0\)</span> a certain number of individuals are infected / infectious. This becomes especially important if we consider rules with delays.</p>
+</dd>
+<dt>Exponential Waiting Times</dt><dd><p>Waiting times of the rules are exponentially distributed, unless otherwise stated, for general distributions, see <span id="id3">[<a class="reference internal" href="markdown.html#id8" title="Marian Boguñá, Luis F. Lafuerza, Raúl Toral, and M. Ángeles Serrano. Simulating non-markovian stochastic processes. Phys. Rev. E, 90:042108, Oct 2014. URL: https://link.aps.org/doi/10.1103/PhysRevE.90.042108, doi:10.1103/PhysRevE.90.042108.">BogunaLTS14</a>]</span>.</p>
+</dd>
+<dt>Time-independent Rates</dt><dd><p>Each rate is not explicitly time-dependent. In some special cases, e.g. lockdowns, we consider time-dependence in the sense of being constant between given times.</p>
+</dd>
+<dt>Independent Execution of Rules</dt><dd><p>The execution of each rule is independent of the execution of any other rule.</p>
+</dd>
+<dt>Differentiability</dt><dd><p>We consider ODE formulations as limit cases, i.e. as approximations for very large populations.</p>
+</dd>
+</dl>
+<div class="toctree-wrapper compound">
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -255,7 +298,21 @@ It does not go in-depth into any particular topic - check out <a class="referenc
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="modelling-framework.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">2. </span>Modelling Framework</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="notebooks/SIR.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3.1. </span>SIR Model</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>
