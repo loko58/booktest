@@ -7,9 +7,5 @@ options:
   numbered: true
 chapters:
 - file: introduction
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
-- file: launchbuttons.ipynb
-- file: thebe.md
+- file: modelling-framework
 - file: bibliography

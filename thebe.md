@@ -37,30 +37,6 @@ ax.scatter(x, y, c=y, s=x)
 This is an experimental feature, and may change in the future or work unexpectedly.
 :::
 
-## Activate Thebe
-
-To make your content interactive without requiring readers to leave the current page, you can use a project called [Thebe](https://github.com/executablebooks/thebe).
-This provides you with a {guilabel}`Live Code` button that, when clicked, will convert each code cell into an **interactive** cell that can be edited.
-It also adds a "run" button to each cell, and connects to a Binder kernel running in the cloud.
-
-To add a Thebe button to your Jupyter Book pages, take these steps:
-
-1. First, [add the common launch button configuration](launchbuttons/configuration). This makes it possible for `thebe/` to use the correct environment and file paths for your content.
-2. Activate Thebe integration with the following configuration:
-
-   ```yaml
-   launch_buttons:
-     thebe                  : true
-   ```
-
-## Configure Thebe
-
-In addition, you can configure the Binder settings that are used to provide a kernel for Thebe to run the code.
-These use the same configuration fields as the BinderHub interact buttons described above.
-For information about how to do this, see [the BinderHub launch button documentation](launchbuttons/binder).
-
-+++
-
 ## Pre-execute cells when Thebe is initialized
 
 Sometimes you'd like to run some code cells *immediately* when a kernel is requested.
