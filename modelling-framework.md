@@ -131,20 +131,22 @@ def Gillespie(T, N, Sinit, Iinit, Rinit, Dinit,
               seed,
               updateStates, updatePropensities,
               **kwargs
-              ):     
+              ):
+    
     # Inital values
     t = 0.
-    I = Iinit.copy()
-    S = Sinit.copy()
-    R = Rinit.copy()
-    D = Dinit.copy()
-        
+    S = Sinit
+    I = Iinit
+    R = Rinit
+    D = Dinit
+    
     # Vectors for time series
     time = [t]
-    nS   = [S.copy()]
-    nI   = [I.copy()]
-    nR   = [R.copy()]
-    nD   = [D.copy()]
+    Ss   = [S]
+    Is   = [I]
+    Rs   = [R]
+    Ds   = [D]
+
     
     # Random Generator
     rg = np.random.RandomState(seed)
@@ -155,7 +157,7 @@ def Gillespie(T, N, Sinit, Iinit, Rinit, Dinit,
             break
             
         # First uniformily distributed ranmdom number for reaction time
-        r1  = rg.uniform(0.0, 1.0)
+        r1  = rg.uniform(0., 1.)
         
         # Propensities calculation
         kappa = updatePropensities(S, I, R, D, N, **kwargs)
@@ -166,23 +168,23 @@ def Gillespie(T, N, Sinit, Iinit, Rinit, Dinit,
         t   = t + tau
   
         # Second uniformily distributed random number for executed reaction
-        r2 = rg.uniform(0.0, 1.0)
+        r2 = rg.uniform(0., 1.)
         
         # Rule determined to be executed
         bins = np.cumsum(kappa) / Phi
         rExc = np.searchsorted(bins, r2, side='right')
         
         # Update states
-        S, I, R, D, U = updateStates(rExc, S, I, R, D)
+        S, I, R, D = updateStates(rExc, S, I, R, D)
         
         # Append new values
         time.append(t)
-        nS.append(S.copy())
-        nI.append(I.copy())
-        nR.append(R.copy())
-        nD.append(D.copy())
-    
-    return (time, nS, nI, nR, nD, nU)
+        Ss.append(S)
+        Is.append(I)
+        Rs.append(R)
+        Ds.append(D)
+        
+    return (time, Ss, Is, Rs, Ds)
 :::
 ::::
 :::::

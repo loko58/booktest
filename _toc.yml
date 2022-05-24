@@ -3,9 +3,15 @@
 
 format: jb-book
 root: abstract
-options:
-  numbered: true
-chapters:
-- file: introduction
-- file: modelling-framework
-- file: bibliography
+parts: 
+  - caption:
+    numbered: true
+    chapters:
+    - file: introduction
+    - file: modelling-framework
+    - file: essential-models
+      sections:
+        - file: notebooks/SIR
+  - caption: Appendix
+    chapters:
+    - file: bibliography
